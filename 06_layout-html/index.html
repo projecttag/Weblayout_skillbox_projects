@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!--исправлено, с eng на ru-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сайт отелей Lagoona</title>
-  <!--исправлено,  на Сайт отелей Lagoona-->
 </head>
 
 
 <body>
-  <!--Убран заголовок h1 из body и перенесено в тег main-->
-
-
   <header class="header">
     <div class="container">
       <div>
-        <!--исправлено, изменено шапка добавлено плюс div первая группа -->
         <a href="#" class="header-logo">
-          <!--исправлено, поставлена заглушка #-->
           <img src="./img/Logo.png" alt="Lagoona - сеть отелей" class="header-logo">
-
         </a>
         <a href="tel:+749553225448" class="header-tel">+7 495 322 54 48</a>
         <a href="" class="header-return">Личный кабинет</a>
       </div>
 
       <div>
-        <!--исправлено, добавлена группа элементов div-->
         <nav>
           <ul>
             <li class="header-list-item">
               <a href="#" class="header-link">О нас</a>
-              <!--исправлено, поставлены заглушки # спискам элементов, можно сделать анкорные ссылки на соотв. эл-ты-->
             </li>
             <li class="header-list-item">
               <a href="#" class="header-link">Услуги</a>
@@ -52,10 +42,8 @@
             </li>
           </ul>
         </nav>
-        <!--исправлено, перенесен и добавлен замык. тег nav тк не имеет отношение к кнопке т к это список-->
         <div class="actions">
           <a href="#" class="actions-button">Хочу тур</a>
-          <!--исправлено, кнопка заменена на ссылку-->
           <button class="actions-button">Обратный звонок</button>
         </div>
       </div>
@@ -67,44 +55,32 @@
       Лагуна - сеть отелей
     </h1>
     <section class="offers">
-      <!--Тут в секцию секшн положили как бы еще секцию блок(это div)-->
       <div class="container">
         <h2 class="section-heading">Спецпредложения</h2>
         <div class="offers-cards">
           <div class="offers-thumbs">
             <article class="offer offer-maldives">
-              <!--удалена картинка  <img src="./img/maldives.jpg" class="wallpaper-image">
-               картинки не контентные это бэкграунд-->
               <h3 class="offers-card-heading">
                 Мальдивские острова
               </h3>
               <span class="offers-card-price"> от 55 000р</span>
-              <!--исправлено, заменено на span тут всегда span цифры на сайте span-->
               <a href="#" class="link">Подробнее</a>
-              <!--исправлено, botton заменено на ссылку a само название говорит что это ссылка сделана ссылка a, такая структура у всех карточек(везде заменено на a)-->
             </article>
             <article class="offer offer-crete_hote_tours">
-              <!--удалена картинка <img src="./img/crete.jpg" class="wallpaper-image">-->
               <h3 class="offers-card-heading">
                 Горящий тур на остров Крит
               </h3>
               <span class="offers-card-price"> от 30 000р</span>
-              <!--исправлено, тег p заменено на span-->
               <a href="#" class="link">Подробнее</a>
-              <!--исправлено, карточке присвоена ссылка a вместо botton-->
             </article>
           </div>
 
-          <!--удалена лишняя вложенность<div class="offer offer-lux offer-big"> -->
           <article class="offer offer-rooms_luxury">
-            <!--удалена картинка<img src="./img/special-offer.jpg" class="wallpaper-image">-->
             <h3 class="offers-card-heading">
               Номера категории люкс
             </h3>
             <span class="offers-card-price"> от 50 000р</span>
-            <!--исправлено, тег p заменено на span-->
             <a href="#" class="link">Подробнее</a>
-            <!--исправлено, карточке присвоена ссылка a вместо botton-->
           </article>
         </div>
       </div>
@@ -128,7 +104,8 @@
           структура организации требуют определения и&nbsp;уточнения существенных финансовых и&nbsp;административных
           условий.
         </p>
-        <!--исправлено, типография добавлена-->
+
+
       </div>
     </section>
     <section class="services">
@@ -139,76 +116,49 @@
         <ul class="services-list">
 
           <li class="services-card service-servicing">
-            <!--исправить, ?? вторым классом через бэкграунд прописать -->
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
-            <!--исправить, !!!!такая структура будет у всех элементоыв в этом списке этой секции -->
-
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Эксклюзивное обслуживание
               </a>
-              <!--исправлено, поставлена заглушка тегу а-->
             </h3>
 
             <p class="service-card-text">
               Равным образом постоянный количественный рост и&nbsp;сфера нашей активности
             </p>
-            <!--исправлено, типографом-->
-            <!--исправлено, картинка не контентная <img src="./img/exclusive offer.jpg" class="blog-preview-image">-->
-
 
           </li>
           <li class="services-card service-rent">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Аренда банкетных залов
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
 
             <p class="service-card-text">
               Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм.
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/rent.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем в конце-->
-
 
           </li>
           <li class="services-card service-spa">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Сауны, бассейны, бани, фитнес-залы
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
             <p class="service-card-text">
               Не&nbsp;следует, однако забывать, что начало повседневной работы по&nbsp;формированию позиции
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/sauna.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем после тега ЮЛ-->
 
           </li>
           <li class="services-card service-parking">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Охраняемые автомобильные стоянки
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
             <p class="service-card-text">
               Не&nbsp;следует, однако забывать, что начало повседневной работы по&nbsp;формированию позиции
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/cars.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем после тега ЮЛ-->
 
           </li>
         </ul>
@@ -223,11 +173,9 @@
         <ul class="advantages-list">
 
           <li class="advantages-card">
-            <!--исправлено, это не нужно: <div class="advantage"> -->
             <p>
               Идейные соображения высшего порядка, а&nbsp;также постоянный количественный рост
             </p>
-            <!--исправлено, типографом-->
 
             <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_458)">
@@ -442,7 +390,7 @@
               <p>
                 Равным образом рамки и&nbsp;место обучения кадров способствует подготовки сотрудника
               </p>
-              <!--исправлено, типографом-->
+
             </div>
             <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_530)">
@@ -496,7 +444,7 @@
               <p>
                 Консультация с&nbsp;активом влечет за&nbsp;собой процесс внедрения услуг нашего сервиса
               </p>
-              <!--исправлено, типографом-->
+
             </div>
             <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -632,15 +580,11 @@
           <li class="placement-card">
             <article class="hotel">
 
-              <img src="./img/espanola.jpg" alt="Белокаменный двухэтажный отель">
-              <!-- добавлен альт для описания тк это главный контент-->
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
-                  <!--исправлено, убрали p поставлено div -->
                   <span class="text-gray">от</span>
                   <span class="hotel-price">4 698 р</span>
                   <span>/ ночь</span>
-                  <!--исправлено, поставлено 3 span элемента и обернуто в теги -->
                   <div class="rating">
                     <img src="./img/star.png" alt="Рейтинг отеля 4 из 5" class="rating-gold">
                     <img src="./img/star.png" alt="" class="rating-gold">
@@ -653,22 +597,18 @@
                 <h3 class="hotel-name" lang="es">Lagoona española</h3>
                 <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено ссылка-->
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
+
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
 
-              <img src="./img/son-t.jpg" alt="Жёлтокаменный четырёхэтажный отель">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
-                  <!--исправлено, убрали p поставлено div -->
                   <span class="text-gray">от</span>
                   <span class="hotel-price">5 148 р</span>
                   <span>/ ночь</span>
-                  <!--исправлено, поставлено 3 span элемента и обернуто в теги -->
                   <div class="rating">
                     <img src="./img/star.png" alt="Рейтинг отеля 4 из 5" class="rating-gold">
                     <img src="./img/star.png" alt="" class="rating-gold">
@@ -681,7 +621,6 @@
                 <h3 class="hotel-name" lang="es">Lagoona son típicas</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
@@ -689,7 +628,6 @@
 
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/de-la-guera.jpg" alt="Трёхэтажный отель на берегу моря">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -708,13 +646,11 @@
                 <h3 class="hotel-name" lang="es">Lagoona de la guerra</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/metrica-piadosa.jpg" alt="Отельный комплекс, состоящий из двухэтажных домиков">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -733,14 +669,12 @@
                 <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
 
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/empujar-la-creat.png" alt="Трёхэтажный белокаменный отель с большим басейном">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -758,13 +692,11 @@
                 <h3 class="hotel-name" lang="es">Lagoona empujar la creatividad</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/el-retorno.jpg" alt="Отельный комплекс со специально оборудованными местами для загара">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -781,13 +713,12 @@
                 <h3 class="hotel-name" lang="es">Lagoona el retorno</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
+
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/mentira-piadosa2.jpg" alt="Двухэтажный белокаменный отель с большим бассеином">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -804,13 +735,11 @@
                 <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/suerte-sig-sie.jpg" alt="Одноэтажный отель с панорамныи окнами">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -826,11 +755,9 @@
                 </div>
                 <h3 class="hotel-name" lang="es">Lagoona suerte siguió siempre</h3>
                 <span class="hotel-descripction text-gray">Барселона, Испания</span>
-                <!--исправлено, элементы списка спан-->
                 <a href="#" class="hotel-rooms">
                   Номера
                 </a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
@@ -838,8 +765,6 @@
             <a href="#" class="placement-more-link">
               Посмотреть все варианты
             </a>
-            <!--исправлено, поставлена заглушка тегу a -->
-            <!--исправлено, карточке присвоена ссылка a вместо botton-->
           </li>
         </ul>
       </div>
