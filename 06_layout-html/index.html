@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!--исправлено, с eng на ru-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сайт отелей Lagoona</title>
-  <!--исправлено,  на Сайт отелей Lagoona-->
 </head>
 
 
 <body>
-  <!--Убран заголовок h1 из body и перенесено в тег main-->
-
-
   <header class="header">
     <div class="container">
       <div>
-        <!--исправлено, изменено шапка добавлено плюс div первая группа -->
         <a href="#" class="header-logo">
-          <!--исправлено, поставлена заглушка #-->
           <img src="./img/Logo.png" alt="Lagoona - сеть отелей" class="header-logo">
-
         </a>
         <a href="tel:+749553225448" class="header-tel">+7 495 322 54 48</a>
         <a href="" class="header-return">Личный кабинет</a>
       </div>
 
       <div>
-        <!--исправлено, добавлена группа элементов div-->
         <nav>
           <ul>
             <li class="header-list-item">
               <a href="#" class="header-link">О нас</a>
-              <!--исправлено, поставлены заглушки # спискам элементов, можно сделать анкорные ссылки на соотв. эл-ты-->
             </li>
             <li class="header-list-item">
               <a href="#" class="header-link">Услуги</a>
@@ -52,10 +42,8 @@
             </li>
           </ul>
         </nav>
-        <!--исправлено, перенесен и добавлен замык. тег nav тк не имеет отношение к кнопке т к это список-->
         <div class="actions">
           <a href="#" class="actions-button">Хочу тур</a>
-          <!--исправлено, кнопка заменена на ссылку-->
           <button class="actions-button">Обратный звонок</button>
         </div>
       </div>
@@ -67,44 +55,32 @@
       Лагуна - сеть отелей
     </h1>
     <section class="offers">
-      <!--Тут в секцию секшн положили как бы еще секцию блок(это div)-->
       <div class="container">
         <h2 class="section-heading">Спецпредложения</h2>
         <div class="offers-cards">
           <div class="offers-thumbs">
             <article class="offer offer-maldives">
-              <!--удалена картинка  <img src="./img/maldives.jpg" class="wallpaper-image">
-               картинки не контентные это бэкграунд-->
               <h3 class="offers-card-heading">
                 Мальдивские острова
               </h3>
               <span class="offers-card-price"> от 55 000р</span>
-              <!--исправлено, заменено на span тут всегда span цифры на сайте span-->
               <a href="#" class="link">Подробнее</a>
-              <!--исправлено, botton заменено на ссылку a само название говорит что это ссылка сделана ссылка a, такая структура у всех карточек(везде заменено на a)-->
             </article>
             <article class="offer offer-crete_hote_tours">
-              <!--удалена картинка <img src="./img/crete.jpg" class="wallpaper-image">-->
               <h3 class="offers-card-heading">
                 Горящий тур на остров Крит
               </h3>
               <span class="offers-card-price"> от 30 000р</span>
-              <!--исправлено, тег p заменено на span-->
               <a href="#" class="link">Подробнее</a>
-              <!--исправлено, карточке присвоена ссылка a вместо botton-->
             </article>
           </div>
 
-          <!--удалена лишняя вложенность<div class="offer offer-lux offer-big"> -->
           <article class="offer offer-rooms_luxury">
-            <!--удалена картинка<img src="./img/special-offer.jpg" class="wallpaper-image">-->
             <h3 class="offers-card-heading">
               Номера категории люкс
             </h3>
             <span class="offers-card-price"> от 50 000р</span>
-            <!--исправлено, тег p заменено на span-->
             <a href="#" class="link">Подробнее</a>
-            <!--исправлено, карточке присвоена ссылка a вместо botton-->
           </article>
         </div>
       </div>
@@ -128,7 +104,8 @@
           структура организации требуют определения и&nbsp;уточнения существенных финансовых и&nbsp;административных
           условий.
         </p>
-        <!--исправлено, типография добавлена-->
+
+
       </div>
     </section>
     <section class="services">
@@ -139,76 +116,49 @@
         <ul class="services-list">
 
           <li class="services-card service-servicing">
-            <!--исправить, ?? вторым классом через бэкграунд прописать -->
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
-            <!--исправить, !!!!такая структура будет у всех элементоыв в этом списке этой секции -->
-
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Эксклюзивное обслуживание
               </a>
-              <!--исправлено, поставлена заглушка тегу а-->
             </h3>
 
             <p class="service-card-text">
               Равным образом постоянный количественный рост и&nbsp;сфера нашей активности
             </p>
-            <!--исправлено, типографом-->
-            <!--исправлено, картинка не контентная <img src="./img/exclusive offer.jpg" class="blog-preview-image">-->
-
 
           </li>
           <li class="services-card service-rent">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Аренда банкетных залов
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
 
             <p class="service-card-text">
               Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм.
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/rent.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем в конце-->
-
 
           </li>
           <li class="services-card service-spa">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Сауны, бассейны, бани, фитнес-залы
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
             <p class="service-card-text">
               Не&nbsp;следует, однако забывать, что начало повседневной работы по&nbsp;формированию позиции
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/sauna.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем после тега ЮЛ-->
 
           </li>
           <li class="services-card service-parking">
-            <!--исправлено, эти эл ты не будут переиспользованы и обертку не делаем <div class="service-content">-->
             <h3 class="servises-heading">
               <a href="#" class="servises-heading-link">
                 Охраняемые автомобильные стоянки
               </a>
-              <!--исправлено, поставлена заглушка тегу a -->
             </h3>
             <p class="service-card-text">
               Не&nbsp;следует, однако забывать, что начало повседневной работы по&nbsp;формированию позиции
             </p>
-            <!--исправлено, типографом-->
-            <img src="./img/cars.jpg" class="blog-preview-image">
-            <!-- тут без альт так как изображение декоративное-->
-            <!-- картинку вставляем после тега ЮЛ-->
 
           </li>
         </ul>
@@ -221,15 +171,10 @@
           Приемущества
         </h2>
         <ul class="advantages-list">
-
           <li class="advantages-card">
-            <!--исправлено, это не нужно: <div class="advantage"> -->
-            <p>
-              Идейные соображения высшего порядка, а&nbsp;также постоянный количественный рост
-            </p>
-            <!--исправлено, типографом-->
-
-            <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, Размещен svg перед параграфами-->
+            <svg class="services-item-icon" width="64" height="66" viewBox="0 0 64 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_458)">
                 <path
                   d="M37.95 58.4074H20.2875C11.375 58.4074 4.125 50.9308 4.125 41.7398V25.9359C4.125 24.9047 4.9375 24.0797 5.925 24.0797C6.9125 24.0797 7.725 24.9176 7.725 25.9359V41.7527C7.725 48.8941 13.35 54.6949 20.275 54.6949H37.9375C38.9375 54.6949 39.7375 55.5328 39.7375 56.5512C39.75 57.5824 38.95 58.4074 37.95 58.4074Z"
@@ -286,15 +231,15 @@
                 </clipPath>
               </defs>
             </svg>
-
+            <p>
+              Идейные соображения высшего порядка, а&nbsp;также постоянный количественный рост
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Значимость этих проблем настолько очевидна, что вопрос остается открытым
-              </p>
-            </div>
-            <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, Размещен svg перед параграфами-->
+            <svg class="services-item-icon" width="67" height="66" viewBox="0 0 67 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_440)">
                 <path
                   d="M40.8281 49.0746H11.0707V35.0625C11.0707 30.0996 15.1535 26.0777 20.1916 26.0777H40.8281V49.0746Z"
@@ -339,15 +284,15 @@
                 </clipPath>
               </defs>
             </svg>
-
+            <p>
+              Значимость этих проблем настолько очевидна, что вопрос остается открытым
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Таким образом реализация плановых заданий играет важную роль для понимания
-              </p>
-            </div>
-            <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, Размещен svg перед параграфами-->
+            <svg class="services-item-icon" width="64" height="66" viewBox="0 0 64 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M58.2375 61.2692H49.4375C48.5 61.2692 47.7375 60.4828 47.7375 59.516C47.7375 58.5492 48.5 57.7629 49.4375 57.7629H58.2375C59.55 57.7629 60.6125 56.6672 60.6125 55.3137V23.4867C60.6125 22.1332 59.55 21.0375 58.2375 21.0375H17.2375C15.925 21.0375 14.8625 22.1332 14.8625 23.4867V55.3395C14.8625 56.693 15.925 57.7887 17.2375 57.7887H40.1125C41.05 57.7887 41.8125 58.575 41.8125 59.5418C41.8125 60.5086 41.05 61.2949 40.1125 61.2949H17.2375C14.0625 61.2949 11.475 58.6266 11.475 55.3524V23.4867C11.475 20.2125 14.0625 17.5442 17.2375 17.5442H58.2375C61.4125 17.5442 64 20.2125 64 23.4867V55.3395C64 58.6008 61.4125 61.2692 58.2375 61.2692Z"
                 fill="#2D527C" />
@@ -386,15 +331,14 @@
                 d="M10.1625 17.6602H1.7C0.7625 17.6602 0 16.8738 0 15.9071V6.48401C0 5.51721 0.7625 4.73088 1.7 4.73088H10.175C11.1125 4.73088 11.875 5.51721 11.875 6.48401V15.9199C11.8625 16.8738 11.1 17.6602 10.1625 17.6602ZM3.3875 14.1668H8.475V8.22424H3.3875V14.1668Z"
                 fill="#2D527C" />
             </svg>
-
+            <p>
+              Таким образом реализация плановых заданий играет важную роль для понимания
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Повседневная практика показывает, что сложившаяся структура организации
-              </p>
-            </div>
-            <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="services-item-icon" width="66" height="66" viewBox="0 0 66 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_405)">
                 <path
                   d="M38.4527 18.4851H19.207C18.1758 18.4851 17.3379 17.6472 17.3379 16.616C17.3379 15.5847 18.1758 14.7469 19.207 14.7469H38.4527C39.484 14.7469 40.3219 15.5847 40.3219 16.616C40.3219 17.6472 39.484 18.4851 38.4527 18.4851Z"
@@ -436,15 +380,15 @@
                 </clipPath>
               </defs>
             </svg>
+            <p>
+              Повседневная практика показывает, что сложившаяся структура организации
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Равным образом рамки и&nbsp;место обучения кадров способствует подготовки сотрудника
-              </p>
-              <!--исправлено, типографом-->
-            </div>
-            <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, svg добавлен-->
+            <svg class="services-item-icon" width="66" height="66" viewBox="0 0 66 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_530)">
                 <path
                   d="M15.6364 60.3152H11.1891C10.1966 60.3152 9.39734 59.516 9.39734 58.5234C9.39734 57.5308 10.1966 56.7316 11.1891 56.7316H15.6364C16.629 56.7316 17.4282 57.5308 17.4282 58.5234C17.4282 59.516 16.629 60.3152 15.6364 60.3152Z"
@@ -489,16 +433,15 @@
                 </clipPath>
               </defs>
             </svg>
-
+            <p>
+              Равным образом рамки и&nbsp;место обучения кадров способствует подготовки сотрудника
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Консультация с&nbsp;активом влечет за&nbsp;собой процесс внедрения услуг нашего сервиса
-              </p>
-              <!--исправлено, типографом-->
-            </div>
-            <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, svg добавлен-->
+            <svg class="services-item-icon" classwidth="64" height="66" viewBox="0 0 64 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M54.025 49.7191H9.97503C8.96253 49.7191 8.15002 48.8812 8.15002 47.8371V45.8519C8.15002 32.291 18.85 21.2566 32 21.2566C34.4875 21.2566 36.9375 21.6562 39.2875 22.4296C40.25 22.7519 40.775 23.8089 40.475 24.8015C40.1625 25.7941 39.1375 26.3355 38.175 26.0261C36.1875 25.3687 34.1125 25.0335 32 25.0335C20.8625 25.0335 11.8 34.3793 11.8 45.8648V45.9679H52.2V45.8648C52.2 40.2703 50.075 35.0109 46.225 31.0664C45.5125 30.3316 45.5 29.1457 46.2125 28.398C46.925 27.6632 48.075 27.6503 48.8 28.3851C53.35 33.0386 55.8625 39.239 55.8625 45.8519V47.8371C55.85 48.8812 55.0375 49.7191 54.025 49.7191Z"
                 fill="#F0BF5F" />
@@ -534,15 +477,15 @@
                 d="M14.4625 17.2219C14 17.2219 13.525 17.0414 13.175 16.6676L10.6625 14.0766C9.95005 13.3418 9.95005 12.143 10.6625 11.4082C11.375 10.6735 12.5375 10.6735 13.25 11.4082L15.7625 13.9992C16.475 14.734 16.475 15.9328 15.7625 16.6676C15.4 17.0414 14.9375 17.2219 14.4625 17.2219Z"
                 fill="#2D527C" />
             </svg>
-
+            <p>
+              Консультация с&nbsp;активом влечет за&nbsp;собой процесс внедрения услуг нашего сервиса
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Повседневная практика показывает, что дальнейшее развитие различных форм
-              </p>
-            </div>
-            <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, svg добавлен-->
+            <svg class="services-item-icon" width="67" height="66" viewBox="0 0 67 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M60.5094 61.5527H6.49062C2.91816 61.5527 0 58.691 0 55.159V10.841C0 7.30898 2.91816 4.44727 6.49062 4.44727H41.9404C42.9611 4.44727 43.7855 5.25937 43.7855 6.26484C43.7855 7.27031 42.9611 8.08242 41.9404 8.08242H6.49062C4.94648 8.08242 3.69023 9.31992 3.69023 10.841V55.159C3.69023 56.6801 4.94648 57.9176 6.49062 57.9176H60.5094C62.0535 57.9176 63.3098 56.6801 63.3098 55.159V10.841C63.3098 9.31992 62.0535 8.08242 60.5094 8.08242H52.5793C51.5586 8.08242 50.7342 7.27031 50.7342 6.26484C50.7342 5.25937 51.5586 4.44727 52.5793 4.44727H60.5094C64.0949 4.44727 67 7.32187 67 10.841V55.159C67 58.691 64.0818 61.5527 60.5094 61.5527Z"
                 fill="#2D527C" />
@@ -576,15 +519,15 @@
                 d="M51.3624 43.3769C50.8913 43.3769 50.4202 43.1964 50.0538 42.8484L45.1335 38.0015C44.4137 37.2925 44.4137 36.1324 45.1335 35.4234C45.8532 34.7144 47.0309 34.7144 47.7506 35.4234L52.671 40.2703C53.3907 40.9793 53.3907 42.1394 52.671 42.8484C52.3045 43.1964 51.8335 43.3769 51.3624 43.3769Z"
                 fill="#F0BF5F" />
             </svg>
-
+            <p>
+              Повседневная практика показывает, что дальнейшее развитие различных форм
+            </p>
+            <!--Исправлено, svg удален-->
           </li>
           <li class="advantages-card">
-            <div class="advantage">
-              <p>
-                Значимость этого настолько очевидна, что консультация наших экспертов помогает
-              </p>
-            </div>
-            <svg width="64" height="66" viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--Исправлено, svg добавлен-->
+            <svg class="services-item-icon" width="64" height="66" viewBox="0 0 64 66" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_370726_480)">
                 <path
                   d="M32.7875 29.5453C31.8 29.5453 30.9875 28.7203 30.9875 27.6891V6.63867C31 3.32578 33.775 0.644531 37.2 0.644531C40.625 0.644531 43.4 3.33867 43.4 6.65156C43.4 7.66992 42.6 8.50781 41.6 8.50781C40.6 8.50781 39.8 7.68281 39.8 6.65156C39.8 5.38828 38.625 4.35703 37.1875 4.35703C35.75 4.35703 34.575 5.38828 34.575 6.65156V27.702C34.5875 28.7074 33.7875 29.5453 32.7875 29.5453Z"
@@ -617,7 +560,10 @@
                 </clipPath>
               </defs>
             </svg>
-
+            <!--Исправлено, svg удален-->
+            <p>
+              Значимость этого настолько очевидна, что консультация наших экспертов помогает
+            </p>
           </li>
         </ul>
       </div>
@@ -631,16 +577,13 @@
         <ul class="placement-list">
           <li class="placement-card">
             <article class="hotel">
-
-              <img src="./img/espanola.jpg" alt="Белокаменный двухэтажный отель">
-              <!-- добавлен альт для описания тк это главный контент-->
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/espanola.jpg" alt="Белокаменный двухэтажный отель">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
-                  <!--исправлено, убрали p поставлено div -->
                   <span class="text-gray">от</span>
                   <span class="hotel-price">4 698 р</span>
                   <span>/ ночь</span>
-                  <!--исправлено, поставлено 3 span элемента и обернуто в теги -->
                   <div class="rating">
                     <img src="./img/star.png" alt="Рейтинг отеля 4 из 5" class="rating-gold">
                     <img src="./img/star.png" alt="" class="rating-gold">
@@ -653,22 +596,19 @@
                 <h3 class="hotel-name" lang="es">Lagoona española</h3>
                 <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено ссылка-->
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
+
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-
-              <img src="./img/son-t.jpg" alt="Жёлтокаменный четырёхэтажный отель">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/son-t.jpg" alt="Жёлтокаменный четырёхэтажный отель">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
-                  <!--исправлено, убрали p поставлено div -->
                   <span class="text-gray">от</span>
                   <span class="hotel-price">5 148 р</span>
                   <span>/ ночь</span>
-                  <!--исправлено, поставлено 3 span элемента и обернуто в теги -->
                   <div class="rating">
                     <img src="./img/star.png" alt="Рейтинг отеля 4 из 5" class="rating-gold">
                     <img src="./img/star.png" alt="" class="rating-gold">
@@ -681,15 +621,14 @@
                 <h3 class="hotel-name" lang="es">Lagoona son típicas</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
 
-
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/de-la-guera.jpg" alt="Трёхэтажный отель на берегу моря">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/de-la-guera.jpg" alt="Трёхэтажный отель на берегу моря">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -708,13 +647,13 @@
                 <h3 class="hotel-name" lang="es">Lagoona de la guerra</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/metrica-piadosa.jpg" alt="Отельный комплекс, состоящий из двухэтажных домиков">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/metrica-piadosa.jpg" alt="Отельный комплекс, состоящий из двухэтажных домиков">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -733,14 +672,14 @@
                 <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
 
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/empujar-la-creat.png" alt="Трёхэтажный белокаменный отель с большим басейном">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/empujar-la-creat.png" alt="Трёхэтажный белокаменный отель с большим басейном">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -758,13 +697,14 @@
                 <h3 class="hotel-name" lang="es">Lagoona empujar la creatividad</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/el-retorno.jpg" alt="Отельный комплекс со специально оборудованными местами для загара">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/el-retorno.jpg"
+                alt="Отельный комплекс со специально оборудованными местами для загара">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -781,13 +721,14 @@
                 <h3 class="hotel-name" lang="es">Lagoona el retorno</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
+
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/mentira-piadosa2.jpg" alt="Двухэтажный белокаменный отель с большим бассеином">
+              <!--Исправлено, добавлен тег img-->
+              <img src="pictures/mentira-piadosa2.jpg" alt="Двухэтажный белокаменный отель с большим бассеином">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -804,13 +745,13 @@
                 <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <a href="#" class="hotel-rooms">Номера</a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
           <li class="placement-card">
             <article class="hotel">
-              <img src="./img/suerte-sig-sie.jpg" alt="Одноэтажный отель с панорамныи окнами">
+              <!--Исправлено, добавлен тег img, тег alt нужен для описания картинки если нет изображения-->
+              <img src="pictures/suerte-sig-sie.jpg" alt="Одноэтажный отель с панорамныи окнами">
               <div class="placement-wrapper">
                 <div class="hotel-descripction">
                   <span class="text-gray">от</span>
@@ -826,11 +767,9 @@
                 </div>
                 <h3 class="hotel-name" lang="es">Lagoona suerte siguió siempre</h3>
                 <span class="hotel-descripction text-gray">Барселона, Испания</span>
-                <!--исправлено, элементы списка спан-->
                 <a href="#" class="hotel-rooms">
                   Номера
                 </a>
-                <!--исправлено, карточке присвоена ссылка a вместо botton-->
               </div>
             </article>
           </li>
@@ -838,8 +777,6 @@
             <a href="#" class="placement-more-link">
               Посмотреть все варианты
             </a>
-            <!--исправлено, поставлена заглушка тегу a -->
-            <!--исправлено, карточке присвоена ссылка a вместо botton-->
           </li>
         </ul>
       </div>
