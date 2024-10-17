@@ -1,0 +1,620 @@
+
+/*Общие пояснения для разметки к седьмому блоку.
+
+-SVG были убраны из html документа и перенесены в стили(так как верно для верстки)
+-Были подключены изображения из папки img для лучшего ориентирования в верчтке,
+но потом папка img , была удалена, чтобы не перегружать картинками корневую папку для
+отправки на GitLab(стили с картинками остались в сss файле)
+-Некоторые стили были добавлены допполнительно к этой главе,
+хотя они предназначены для следующей главы(
+так как было тяжело делать верстку и требовалось больше
+визуализации)
+- Было решено добавить flrx в каждый стиль по отдельности а не делать общим стилем
+*/
+
+
+/* Main Properties Общие настройки страницы*/
+
+
+/* для простоты работы с
+  элементами все паддинги будут браться за счет самого размера элемента не будет расти
+*/
+html {
+  box-sizing: border-box;  /*будет проще работать с эл ми с его помощью */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /*и все элементы и псевдоэлементы  инхерит такие же как и у родителей как у предшествующего тега ШТМЛ*/
+}
+
+/* тут текст декорейшн для ссылок */
+a {
+  color: inherit; /* инхерит чтобы не мешались цвета*/
+  text-decoration: none;
+
+}
+
+
+/* стили для картинок */
+img {
+  max-width: 100%; /* сбросили все стили списков отступы и т д чтобы изображения не выходили
+  за границы контейнеров в котором они находятся  */
+}
+
+body {
+  min-width: 1200px;
+  font-family: 'font', sans-serif; /*в будущем подкл. нужный  шрифт*/
+}
+
+
+
+/* glob */
+
+
+/*Так как главный заголовок был не найден, решено было спрятать мнимый заголовок ЛАГУНА h1*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/*специальный класс для списков будет сбрасывать все атрибуты списков
+визуальные  отступы паддинг стайл. Добавлен класс и теперь список полностью плоский для легкой стилизации*/
+/*Сбросит стили списка по умолчанию задали ul */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* лист стайл нон для того чтобы списки не выделялись визуально */
+
+}
+
+/* Класс который будет сбрасывать стили кнопок задали button */
+.btn-reset {
+padding: 0; /*паддинг будем отдельно задавать*/
+border: none; /*бордер не понадобится*/
+background-color: transparent; /* будем по месту задавать*/
+cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+}
+
+
+
+/* многие списки будем в качестве контейнера использовать по этому делаем
+доп класс флекс кот выз дисплей флекс  */
+
+/*контейнер смотреть на макете */
+.container {
+  width: 1200px;
+  padding: 0 15px; /*паддинг 0 по вертикали  и 15 по горизонтали*/
+  margin: 0 auto; /*0 авто для того чтоб центрировался по горизонтали */
+}
+
+
+
+/* многие списки будем в качестве контейнера использовать по этому делаем
+доп класс флекс кот выз дисплей флекс  */
+
+/*отступ от заголовков 40 пкс...  для тегов h1 h2 и т д*/
+
+.section-heading {
+  margin-left: 40px;
+  color:#333333;
+}
+
+
+.offers-heading {
+  margin-bottom: 20px;
+}
+
+
+/*СТИЛИ НИЖЕ НЕ ПРИМЕНЯЛА Glob решение было применять flex и section-offset то есть
+параметры этих стилей непосредственно в индивидуальных стилях каждого элемента  */
+/*
+
+.section-offset {
+padding-top: 35px;
+padding-bottom: 35px;
+}
+
+.flex {
+  display: flex
+}
+
+*/
+
+/* Body */
+.body-index {
+  background-color: #F1F1F1; /* Задали цвет самой страницы */
+}
+
+/*Header*/
+/*Флексы в хедер будут указаны вместе со стилями а не вынесены в отдельный стиль как делал лектор*/
+
+.header {    /*Header тег для шапки*/
+  padding-top: 30px;
+  padding-bottom: 35px;
+}
+
+.header-top {
+  display: flex;
+  margin-bottom: 30px; /*устанавливает внешний отступ внизу элемента margin устанавливает величину отступа от каждого края элемента.*/
+  align-items: center; /*выравнивание элементов по центру*/
+}
+
+.header-top-left {    /*Header тег для шапки*/
+  display: flex;
+  align-items: center;
+}
+
+.header-tel-cont {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 744px;
+}
+
+.header-tel {
+  margin-right: 10px;  /*можно ли задать через авто маргин*/
+  /*color: #666666; */ /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  font-size: 20px;
+}
+
+.header-return {
+  margin-left: auto;
+  padding-left: 28px;
+  max-width: 695px;
+  /*color: #CC9933;*/
+  /*background: url(..//pictures/arrow.svg) no-repeat;*/ /* СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ Задаем путь до картинки со стрелкой Потом включить !! в след главе*/
+  background-position: left top;
+  line-height: 16px;
+
+}
+
+.header-logo {
+  margin-right: 40px;
+}
+
+
+/*Nav */
+
+
+.nav {
+  display: flex;
+  padding: 27px 45px;
+  align-items: center;
+  justify-content: space-between;
+  /*background-color: #FFFFFF;*/ /*В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ  Задан цвет меню*/
+  border-radius: 15px;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 50px;
+  max-width: 745px;
+  padding-right: 55px;
+  /*border-right: solid 1px #E1E1E1;*/ /*В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ Задан цвет разделяющему элементу*/
+  ;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 45px;
+}
+
+.nav-link {
+  color: inherit; /* #666666 В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ Задан цвет разделяющему элементу*/
+
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 420px;
+  margin-bottom: -10px;
+  padding-left: 20px;
+}
+
+/* Botton кнопки стили*/
+
+/* Класс который будет сбрасывать стили кнопок  */
+.btn-reset {
+padding: 0; /*паддинг будем отдельно задавать*/
+border: none; /*бордер не понадобится*/
+background-color: transparent; /* будем по месту задавать*/
+cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+}
+
+/*В СЛЕД. ГЛАВЕ включить стиль кнопок Отключен стиль кнопок на время, включить в след. главе */
+/*
+.actions-button {
+  margin-bottom: 10px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background-color: inherit;
+  border: solid 1px #CC9933;
+  color: #CC9933;
+}
+
+.actions-button:focus {
+  outline: none;
+}
+
+*/
+
+.actions-button:not(:last-child) {
+  margin-right: 40px;
+}
+
+
+/* Offers */
+
+
+.offers {
+  padding-top: 35px;
+  padding-bottom: 2px;
+}
+
+.section-heading {
+  margin-left: 40px;    /* ВЗЯТО ДЛЯ АШ 2 */
+  /*color:#333333;*/ /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+}
+
+.offers-heading {
+  margin-bottom: 20px;
+}
+
+.offers-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.offers-thumbs {
+  width: 50%;
+}
+
+.offer {
+  padding: 40px 110px 40px 40px;
+  margin-bottom: 23px;
+  /*border-radius: 15px;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #b5b5b5; */ /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  line-height: 1;
+  outline: 1px solid coral; /*Потом снять!!!!Для обозначения границы добавили*/
+}
+
+.offers-card-price {
+  opacity: .8;
+}
+
+.link {
+  /*color: #FFCC66;*/ /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  background: transparent;
+}
+
+/* SECTION 1 */
+
+/* OFFERS CARRDS STULE Спецпредложения КАРТОЧКИ СТИЛИ */
+
+.offer-maldives {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 258px;
+  background-image: url(..//pictures/maldives.jpg);
+}
+
+.offer-crete_hote_tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 258px;
+  margin-bottom: 23px;
+  background-image: url(..//pictures/crete.jpg);
+}
+
+.offer-big {
+  width: 50%;
+  margin-left: 23px;
+}
+
+.offer-rooms_luxury {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  max-width: 573px;
+  min-height: 540px;
+  background-image: url(..//pictures/special-offer.jpg);
+}
+
+.offers-card-heading {
+  max-width: 299px;
+  margin: 0px;
+  margin-bottom: 13px;
+}
+
+.offers-card-price {
+  margin-top: 0px;
+  margin-bottom: 35px;
+}
+
+
+/* SECTION 2 */
+
+/* About */
+
+.about {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.about-heading {
+  margin: 0px;
+  margin-bottom: 11px; /* ВЗЯТО ДЛЯ АШ 2 О НАС  */
+}
+
+.about-text {
+  max-width: 888px;
+  line-height: 32px;
+}
+
+
+/* SECTION 3 */
+
+/* Services */
+.services {
+  padding-top: 35px;
+  padding-bottom: 12px;
+}
+
+.services-heading {
+  margin-bottom: 20px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*.servises-heading-link {
+  color: #CC9933;
+}    */                               /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+
+.service-servicing {
+  background: url(..//pictures/exclusive_offer.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-rent {
+  background: url(..//pictures/rent.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-spa {
+  background: url(..//pictures/sauna.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-parking {
+  background: url(..//pictures/cars.jpg) no-repeat;
+  background-size: contain;
+}
+
+.services-card {
+  min-height: 330px;
+  max-width: 573px;
+  padding: 190px 126px 10px 45px;
+  margin-bottom: 23px;
+  /*border-radius: 15px; */  /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  background-color: white;
+  outline: 1px solid coral
+}
+
+ .services-card:nth-child(odd) {
+  margin-right: 23px;
+}
+
+.service-card-text {
+  margin-top: 13px;
+  line-height: 32px;
+}
+
+/* SECTION 4 */
+
+/* Advantages */
+.advantages {
+  padding-top: 35px;
+  padding-bottom: 12px;
+}
+
+.advantages-heading {
+  margin-bottom: 30px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-bath {
+  background: url(..//pictures/bathtub.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-hanger {
+  background: url(..//pictures/hanger.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-heating {
+  background: url(..//pictures/heating.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-key {
+  background: url(..//pictures/hotel-key.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-parking {
+  background: url(..//pictures/parking.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-reception {
+  background: url(..//pictures/reception.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-security-box {
+  background: url(..//pictures/security-box.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-swimming-pool {
+  background: url(..//pictures/swimming-pool.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.back-color {
+  background-color: white;
+
+}
+
+.advantages-card {
+  max-width: 275px;
+  min-height: 275px;
+  padding: 116px 42px 10px 45px;
+  margin-bottom: 23px;
+  /*border-radius: 15px; */ /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  outline: 1px solid coral /*ОТКЛЮЧИТЬ ПОТОМ*/
+}
+
+.advantages-card:not(:nth-child(4n)) {
+  margin-right: 23px;
+}
+
+ .advantage {
+  line-height: 32px;
+}
+
+
+
+/* SECTION 5*/
+
+/* Placement */
+.placement {
+  padding-top: 35px;
+}
+
+.placement-heading {
+  margin-bottom: 30px;
+}
+
+.placement-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.placement-card {
+  width: 32%;
+  min-height: 440px;
+  margin-bottom: 23px;
+  /*border-radius: 15px; */ /*СЛЕДУЮЩАЯ ГЛАВА Потом ВКЛЮЧИТЬ,*/
+  background-color: white;
+  outline: 1px solid coral /*Потом отключить, задали для разметки, в след главе выключить */
+}
+
+.placement-card:not(:nth-child(3n)) {
+ margin-right: 23px;
+}
+
+.hotel-img {
+  display: inline-block;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.placement-wrapper {
+  padding: 31px 45px 10px 45px;
+}
+
+.hotele-description-flex {
+  display: flex;
+}
+
+.hotel-descripction {
+  margin: 0px;
+}
+
+.placement-price-wrapper {
+  max-width: 185px;
+}
+
+/*.text-gray {
+  color: #999999;
+}  */                      /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+
+.rating {
+  display: flex;
+  margin-left: auto;
+}
+
+.rating-star {
+  width: 14px;
+}
+
+.rating-star:not(:last-child) {
+  margin-right: 6px;
+}
+
+.hotel-name {
+  margin-bottom: 16px;
+}
+
+.hotel-descripction {
+  margin-bottom: 16px;
+}
+
+.hotel-rooms {
+  padding: 13px 20px;
+  border-radius: 15px;
+  background-color: inherit;
+ /* border: 1px solid #CC9933;*/  /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+  border-radius: 10px;
+ /* color: #CC9933;*/               /*СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ*/
+
+}
+
+.placement-card-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 40px 40px 27px 54px;
+  background: url(..//pictures/more-variants.jpg) no-repeat;
+  background-size: cover;
+}
+
+.placement-more-link {
+  max-width: 280px;
+  background-color: inherit;
+  color: inherit;  /* WHITE вместо Инхерит СЛЕДУЮЩАЯ ГЛАВА ВКЛЮЧИТЬ */
+}
