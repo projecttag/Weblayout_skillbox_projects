@@ -73,10 +73,10 @@ body {
 
 /* Класс который будет сбрасывать стили кнопок задали button */
 .btn-reset {
-padding: 0; /*паддинг будем отдельно задавать*/
-border: none; /*бордер не понадобится*/
-background-color: transparent; /* будем по месту задавать*/
-cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+  padding: 0; /*паддинг будем отдельно задавать*/
+  border: none; /*бордер не понадобится*/
+  background-color: transparent; /* будем по месту задавать*/
+  cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
 }
 
 
@@ -92,18 +92,41 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 
 
 
-/*отступ от заголовков 40 пкс...  для тегов h1 h2 и т д*/
+/*У всех заголовков одинаковый класс отступ от заголовков 40 пкс...  для тегов h1 h2 и т д*/
 .offers-heading {
+  margin: 0;
   margin-bottom: 20px;
+  text-indent: 40px; /*отступ слева */
+
 }
 
+/*Для всех секций создаем общий класс
+все отступы в макете идут по 70 пикселей
+то есть делим на пополам т о решается проблема безопасности
+контента сверху и снизу чтобы он  не
+прилипал внизу и вверху, плюс проблема с отступами
+*/
+
+.section-offset {
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+}
 
 
 /*Header*/
 
-.header {    /*Header тег для шапки*/
-  padding-top: 30px;
+
+.header-bottom {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 14px 45px;  /*Отступы создаются от родителя, от нашего элемента*/
+
 }
+/*Работаем с внутренними отступами
+решит проблему отступов и обезопасит контент
+*/
 
 .header-top {
   display: flex;
@@ -114,6 +137,7 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 .header-top-left {    /*Header тег для шапки*/
   display: flex;
   align-items: center;
+  margin-right: auto;  /*Стараться не делать влево и вверх, т к они*/
 }
 
 .header-tel-cont {
@@ -122,21 +146,25 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
   max-width: 744px;
 }
 
+/*
+Тут не нужен марджин райт
 .header-tel {
   margin-right: 10px;
 }
+*/
 
 .header-return {
-  margin-left: auto;
-  padding-left: 28px;
   max-width: 695px;
   background-position: left top;
   line-height: 16px;
+  margin-right: auto; /*МАРДЖИН Стараться не делать влево и вверх, т к они*/
+   /* margin-left: auto;
+  padding-left: 28px;   убрать их не нужны*/
 }
 
 
 .header-logo {
-  margin-right: 40px;
+  margin-right: auto; /*Стараться не делать влево и вверх, т к они*/
 }
 
 
@@ -154,10 +182,10 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 .nav-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  min-height: 50px;
-  max-width: 745px;
-  padding-right: 55px;
+  /* align-items: center; все что ниже убераем*/
+  /* min-height: 50px;   */
+  /* max-width: 745px; */
+  /* padding-right: 55px;  */
   /*border-right: solid 1px #E1E1E1;*/ /*В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ Задан цвет разделяющему элементу*/
   ;
 }
@@ -169,9 +197,9 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 .actions {
   display: flex;
   flex-wrap: wrap;
-  max-width: 420px;
-  margin-bottom: -10px;
-  padding-left: 20px;
+  /* max-width: 420px;
+  margin-bottom: -10px; убрали */
+  /* padding-left: 20px;  убрали */
 }
 
 /* Botton кнопки стили*/
@@ -184,6 +212,18 @@ background-color: transparent; /* будем по месту задавать*/
 cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
 }
 
+.btn-style{
+margin-right: 30px;
+
+}
+
+/* добавили маргины всем кроме последн эл-та */
+.btn-style:not(:last-child) {
+  margin-right: 30px;
+}
+
+
+
 .actions-button {
   margin: auto;
   margin-bottom: 10px;
@@ -193,30 +233,55 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 
 
 
+
+
 /* SECTION 1*/
 /* Offers */
+/* У самих секций тут ничего нет*/
 
-.offers-heading {
-  margin-bottom: 20px;
+
+.offer {
+  width: 49%;/* 1% на отступ */
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ /* справа 24 и между 2 мя карточками 24 */
+.offers-thumbs {
+  width: 49%; /* 1% на отступ */
+  margin-right: 24px;
+}
+
+/* добавили всем кроме последнего */
+.offer:not(:last-child) {
+  margin-bottom: 24px;
 }
 
 .offers-cards {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px;  убрали */
 }
 
-.offers-thumbs {
-  width: 50%;
+.offers-heading {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.offers-card-price {
+margin-bottom: 47px;
 }
 
 
 /* SECTION 2*/
 /* About */
 
-/* Стили будут добавлены позже, для текущей верстки
-по макету, они нецелесообразны
-*/
+.about-text {
+margin: 0;
+max-width: 888px;
+}
 
 
 
@@ -234,20 +299,35 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 }
 
 .services-card {
-  min-height: 0;
   max-width: 573px;
-  padding: 0px 0px 0px 0px;
-  margin: auto;
+  margin-right: 24px;
+  /*margin: auto;
+   min-height: 0;
+  padding: 0px 0px 0px 0px;  убрали не нужно*/
 }
 
-.services-card:nth-child(odd) {
-  margin-right: 23px;
+/* сбросили отступы у двух последних элементов */
+.services-card:nth-last-child(1),
+.services-card:nth-last-child(2) {
+  margin-right: 0;
 }
 
+/* сбросили маргин у заголовков */
+.service-content {
+  margin: 0;
+}
 
+/* сбросили маргин у параграфа */
+.service-card-text {
+  margin: 0;
+}
 
 /* SECTION 4*/
 /* Advantages */
+
+.advantage {
+  margin: 0;
+}
 
 .advantages-heading {
   margin-bottom: 30px;
@@ -258,8 +338,11 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
   flex-wrap: wrap;
 }
 
+/* задали маргины */
 .advantages-card {
-  width: 275px;
+  max-width: 275px;
+  margin-bottom: 16px;
+  margin-right: 16px;
 }
 
 
@@ -269,7 +352,8 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 /* Placement */
 
 .placement-heading {
-  margin-bottom: 30px;
+
+  margin-bottom: 20px;
 }
 
 .placement-list {
@@ -278,6 +362,41 @@ cursor: pointer; /*курсор всегда такой чтобы пользо�
 }
 
 .placement-card {
-  width: 32%;
+  flex-basis: 374px; /* делит разметку, удобно использовать чтобы разделить */
   margin-bottom: 23px;
+  margin-right: 23px;
+}
+
+/* селектор псевдокласса :nth-child() с расчётом количества элементов в ряду убрали маргин */
+.placement-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+
+/* сбросили у последних элементов марджин */
+.placement-card :last-child {
+  margin-right: 0;
+}
+
+/* span строчный элемент по этому делаем флекс так как блок схлопнется  */
+.placement-wrapper {
+padding: 32px 45px 45px;
+display: flex;
+flex-direction: column;
+align-items: flex-start; /* чтобы ссылка не работала на пустом месте */
+
+}
+
+.hotele-description-flex {
+display: flex;
+margin-bottom: 16px;
+}
+
+.hotel-name {
+margin: 0;
+margin-bottom: 16px;
+}
+
+.hotel-descripction {
+margin-bottom: 20px;
 }

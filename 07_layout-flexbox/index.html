@@ -11,19 +11,14 @@
 
 
 <body class="body-index">
-  <h1 class="visually-hidden">
-    Лагуна - сеть отелей
-  </h1>
+  <!--Убран заголовок h1 в тег main-->
   <header class="header">
     <div class="container">
       <div class="header-top">
-        <div class="header-top-left">
-          <img class="header-logo" src="pictures/Logo.png" alt="Lagoona - сеть отелей">
-          <div class="header-tel-cont">
-            <a href="tel:+74953225448" class="header-tel">+7 495 322 54 48</a>
-          </div>
-        </div>
+        <img class="header-logo" src="pictures/Logo.png" alt="Lagoona - сеть отелей">
+        <a href="tel:+74953225448">+7 495 322 54 48</a>
         <a href="#" class="header-return">Личный кабинет</a>
+        <!--Убрана обертка div добавлен марджин райт авто -->
       </div>
 
       <div class="header-bottom">
@@ -49,26 +44,31 @@
               <a href="#" class="nav-link">Контакты</a>
             </li>
           </ul>
-          <div class="actions">
-            <button class="#">Хочу тур</button>
-            <button class="#">Обратный звонок</button>
-          </div>
         </nav>
+        <div class="actions">
+          <!--Кнопки убраны из навигации так как они к ней не имеют
+          отношения, перенесены-->
+          <button class="btn-style">Хочу тур</button>
+          <button class="btn-style">Обратный звонок</button>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-
+    <h1 class="visually-hidden">
+      Лагуна - сеть отелей
+    </h1>
+    <!--Убран заголовок h1 в тег main-->
     <!--Секция 1-->
-    <section class="offers">
+    <section class="offers section-offset">
       <div class="container">
         <h2 class="section-heading offers-heading">Спецпредложения</h2>
         <div class="offers-cards">
           <div class="offers-thumbs">
 
             <article class="offer offer-maldives">
-              <h3 class="offers-card-heading">
+              <h3 class="offers-card-heading offers-heading">
                 Мальдивские острова
               </h3>
               <span class="offers-card-price"> от 55 000р</span>
@@ -76,7 +76,7 @@
             </article>
 
             <article class="offer offer-crete_hote_tours">
-              <h3 class="offers-card-heading">
+              <h3 class="offers-card-heading offers-heading">
                 Горящий тур на остров Крит
               </h3>
               <span class="offers-card-price"> от 30 000р</span>
@@ -85,7 +85,7 @@
           </div>
 
           <article class="offer-lux offer-big offer offer-rooms_luxury">
-            <h3 class="offers-card-heading luxury-heading">
+            <h3 class="offers-card-heading luxury-heading offers-heading">
               Номера категории люкс
             </h3>
             <span class="offers-card-price"> от 50 000р</span>
@@ -97,9 +97,9 @@
 
     <!--Секция 2-->
 
-    <section class="about">
+    <section class="about section-offset">
       <div class="container">
-        <h2 class="section-heading about-heading">
+        <h2 class="section-heading about-heading offers-heading">
           О нас
         </h2>
         <p class="about-text">
@@ -121,15 +121,15 @@
 
     <!--Секция 3-->
 
-    <section class="services">
+    <section class="services section-offset">
       <div class="container">
-        <h2 class="section-heading section-heading">
+        <h2 class="section-heading section-heading offers-heading">
           Услуги
         </h2>
         <ul class="services-list list-reset">
 
           <li class="services-card service-servicing services-card-top">
-            <h3 class="service-content servises-heading">
+            <h3 class="service-content servises-heading offers-heading">
               <a href="#" class="servises-heading-link arrow">
                 Эксклюзивное обслуживание
               </a>
@@ -141,7 +141,7 @@
 
           </li>
           <li class="services-card service-rent services-card-top">
-            <h3 class="service-content servises-heading">
+            <h3 class="service-content servises-heading offers-heading">
               <a href="#" class="servises-heading-link arrow">
                 Аренда банкетных залов
               </a>
@@ -153,7 +153,7 @@
 
           </li>
           <li class="services-card service-spa">
-            <h3 class="service-content servises-heading">
+            <h3 class="service-content servises-heading offers-heading">
               <a href="#" class="servises-heading-link arrow">
                 Сауны, бассейны, бани, фитнес-залы
               </a>
@@ -165,7 +165,7 @@
 
           </li>
           <li class="services-card service-parking">
-            <h3 class="service-content servises-heading">
+            <h3 class="service-content servises-heading offers-heading">
               <a href="#" class="servises-heading-link arrow">
                 Охраняемые автомобильные стоянки
               </a>
@@ -182,9 +182,9 @@
 
     <!--Секция 4-->
 
-    <section class="advantages">
+    <section class="advantages section-offset">
       <div class="container">
-        <h2 class="section-heading section-heading">
+        <h2 class="section-heading section-heading offers-heading">
           Приемущества
         </h2>
         <ul class="advantages-list list-reset">
@@ -234,9 +234,9 @@
 
     <!--Секция 5-->
 
-    <section class="placement">
+    <section class="placement section-offset">
       <div class="container">
-        <h2 class="section-heading placement-heading">
+        <h2 class="section-heading placement-heading offers-heading">
           Размещение
         </h2>
         <ul class="placement-list list-reset">
@@ -258,8 +258,8 @@
                     <img src="pictures/star-gray.svg" alt="#" class="rating-grey rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona española</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona española</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -281,8 +281,8 @@
                     <img src="pictures/star-gray.svg" alt="#" class="rating-grey rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona son típicas</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona son típicas</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -304,8 +304,8 @@
                     <img src="pictures/star-gold.svg" alt="#" class="rating-gold rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona de la guerra</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona de la guerra</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -327,8 +327,8 @@
                     <img src="pictures/star-gold.svg" alt="#" class="rating-gold rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona mentira piadosa</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -350,7 +350,7 @@
                     <img src="pictures/star-gray.svg" alt="#" class="rating-grey rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona empujar la creatividad</h3>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona empujar la creatividad</h3>
                 <p class="hotel-descripction text-gray">Барселона, Испания</p>
                 <button class="hotel-rooms">Номера</button>
               </div>
@@ -373,8 +373,8 @@
                     <img src="pictures/star-gray.svg" alt="#" class="rating-grey rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona el retorno</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona el retorno</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -396,8 +396,8 @@
                     <img src="pictures/star-gold.svg" alt="#" class="rating-gold rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona mentira piadosa</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona mentira piadosa</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
@@ -419,8 +419,8 @@
                     <img src="pictures/star-gray.svg" alt="#" class="rating-grey rating-star">
                   </span>
                 </div>
-                <h3 class="hotel-name" lang="es">Lagoona suerte siguió siempre</h3>
-                <p class="hotel-descripction text-gray">Барселона, Испания</p>
+                <h3 class="placement-heading hotel-name offers-heading" lang="es">Lagoona suerte siguió siempre</h3>
+                <span class="hotel-descripction text-gray">Барселона, Испания</span>
                 <button class="hotel-rooms">Номера</button>
               </div>
             </article>
