@@ -116,6 +116,10 @@ body {
 
 /*Header*/
 
+.header {
+  padding-top: 30px;
+  padding-bottom: 35px;
+}
 
 .header-bottom {
 display: flex;
@@ -146,27 +150,29 @@ padding: 14px 45px;  /*Отступы создаются от родителя, 
   max-width: 744px;
 }
 
-/*
-Тут не нужен марджин райт
-.header-tel {
-  margin-right: 10px;
-}
-*/
 
+.header-tel {
+  margin-right: auto;
+}
+
+/* телефон прижимается к краю */
 .header-return {
-  max-width: 695px;
   background-position: left top;
   line-height: 16px;
-  margin-right: auto; /*МАРДЖИН Стараться не делать влево и вверх, т к они*/
-   /* margin-left: auto;
+  /* margin-right: auto; не нужно */
+   /* margin-left: auto; не нужно
   padding-left: 28px;   убрать их не нужны*/
+   /* max-width: 695px; не нужно */
 }
 
 
 .header-logo {
-  margin-right: auto; /*Стараться не делать влево и вверх, т к они*/
+  margin-right: 30px; /*Стараться не делать влево и вверх, т к они*/
 }
 
+.header-tel {
+  margin-right: auto;
+}
 
 /*Nav */
 
@@ -212,10 +218,10 @@ background-color: transparent; /* будем по месту задавать*/
 cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
 }
 
-.btn-style{
+/* .btn-style{
 margin-right: 30px;
 
-}
+}  это лишнее внимательнее надо быть т к уже присвоили нот ласт чайлд*/
 
 /* добавили маргины всем кроме последн эл-та */
 .btn-style:not(:last-child) {
@@ -248,16 +254,18 @@ margin-right: 30px;
   align-items: flex-start;
 }
 
+/* добавили всем кроме последнего */
+.offer:not(:last-child) {
+  margin-bottom: 0px;
+}
+
+
  /* справа 24 и между 2 мя карточками 24 */
 .offers-thumbs {
   width: 49%; /* 1% на отступ */
   margin-right: 24px;
 }
 
-/* добавили всем кроме последнего */
-.offer:not(:last-child) {
-  margin-bottom: 24px;
-}
 
 .offers-cards {
   display: flex;
@@ -265,6 +273,7 @@ margin-right: 30px;
   /* margin-bottom: 10px;  убрали */
 }
 
+/* данный стиль нужен только заголовкам h2 */
 .offers-heading {
   margin: 0;
   margin-bottom: 24px;
@@ -273,6 +282,18 @@ margin-right: 30px;
 .offers-card-price {
 margin-bottom: 47px;
 }
+
+/* добавлены стили заголовкам h3 стили другие не как у h2 */
+.offers-card-heading {
+  max-width: 299px;
+  margin: 0px;
+  margin-bottom: 13px;
+}
+
+/* Люксери хидинг добавлю потом */
+/* .luxury-heading {
+font-size: 60px;
+} */
 
 
 /* SECTION 2*/
@@ -301,15 +322,20 @@ max-width: 888px;
 .services-card {
   max-width: 573px;
   margin-right: 24px;
+  margin-bottom: 24px;
   /*margin: auto;
    min-height: 0;
   padding: 0px 0px 0px 0px;  убрали не нужно*/
 }
 
 /* сбросили отступы у двух последних элементов */
-.services-card:nth-last-child(1),
-.services-card:nth-last-child(2) {
+.services-card:nth-child(2n){
   margin-right: 0;
+}
+
+/* Получаем отступы у всех кроме последних элементов*/
+.services-card:nth-last-child(-n + 2){
+margin-bottom: 0;
 }
 
 /* сбросили маргин у заголовков */
@@ -341,12 +367,17 @@ max-width: 888px;
 /* задали маргины */
 .advantages-card {
   max-width: 275px;
-  margin-bottom: 16px;
-  margin-right: 16px;
+  margin-bottom: 22px;
+  margin-right: 22px;
 }
 
+.advantages-card:nth-child(4n){
+margin-right: 0;
+}
 
-
+.advantages-card:nth-last-child(-n+4){
+  margin-bottom: 0;
+}
 
 /* SECTION 5*/
 /* Placement */
@@ -363,8 +394,8 @@ max-width: 888px;
 
 .placement-card {
   flex-basis: 374px; /* делит разметку, удобно использовать чтобы разделить */
-  margin-bottom: 23px;
-  margin-right: 23px;
+  margin-bottom: 24px;
+  margin-right: 24px;
 }
 
 /* селектор псевдокласса :nth-child() с расчётом количества элементов в ряду убрали маргин */
@@ -372,10 +403,18 @@ max-width: 888px;
   margin-right: 0;
 }
 
-
 /* сбросили у последних элементов марджин */
-.placement-card :last-child {
-  margin-right: 0;
+.placement-card:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+
+/* 27 нужно снизу но закрываем по кругу это для безопасности контента */
+.placement-card-more{
+display: flex;
+justify-content:center;
+align-items: flex-end;
+padding: 27px;
 }
 
 /* span строчный элемент по этому делаем флекс так как блок схлопнется  */
