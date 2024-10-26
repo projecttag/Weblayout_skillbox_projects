@@ -1,0 +1,781 @@
+
+/*Общие пояснения для разметки к проделанной работе по верстке седьмому блоку.
+
+-Тексты не подключены, т к макет указанный  в главе 7 этого не предусматривает(но добавлены в папку для дальнейшей работы)
+-SVG были убраны из html документа и БУДУТ перенесены в стили(так как верно для верстки)
+-Были подключены изображения из папки img для лучшего ориентирования в верcтке,
+но потом папка img , была удалена, чтобы не перегружать картинками корневую папку для
+отправки на GitLab(стили с картинками остались в сss файле)
+-Некоторые стили были добавлены допполнительно к этой главе,
+хотя они предназначены для следующей главы(
+так как было тяжело делать верстку и требовалось больше
+визуализации)
+- Было решено добавить flex в каждый стиль по отдельности а не делать общим стилем
+*/
+
+
+/* Main Properties Общие настройки страницы*/
+
+
+/* для простоты работы с
+  элементами все паддинги будут браться за счет самого размера элемента не будет расти
+*/
+html {
+  box-sizing: border-box;  /*будет проще работать с эл ми с его помощью */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /*и все элементы и псевдоэлементы  инхерит такие же как и у родителей как у предшествующего тега ШТМЛ*/
+}
+
+/* тут текст декорейшн для ссылок */
+a {
+  color: inherit; /* инхерит чтобы не мешались цвета*/
+  text-decoration: none;
+}
+
+/* стили для картинок */
+img {
+  max-width: 100%; /* сбросили все стили списков отступы и т д чтобы изображения не выходили
+  за границы контейнеров в котором они находятся  */
+}
+
+body {
+  min-width: 1200px;
+  font-family: 'font', sans-serif; /*в будущем подкл. нужный  шрифт*/
+}
+
+
+
+/* glob */
+
+.body-index {
+  background-color: #F1F1F1;
+}
+
+/*Так как главный заголовок был не найден, решено было спрятать мнимый заголовок ЛАГУНА h1*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/*специальный класс для списков будет сбрасывать все атрибуты списков
+визуальные  отступы паддинг стайл. Добавлен класс и теперь список полностью плоский для легкой стилизации*/
+/*Сбросит стили списка по умолчанию задали ul */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* лист стайл нон для того чтобы списки не выделялись визуально */
+}
+
+/* Класс который будет сбрасывать стили кнопок задали button */
+.btn-reset {
+  padding: 0; /*паддинг будем отдельно задавать*/
+  border: none; /*бордер не понадобится*/
+  background-color: transparent; /* будем по месту задавать*/
+  cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+}
+
+
+/* многие списки будем в качестве контейнера использовать по этому делаем
+доп класс флекс кот выз дисплей флекс  */
+
+/*контейнер смотреть на макете */
+.container {
+  width: 1200px;
+  padding: 0 15px; /*паддинг 0 по вертикали  и 15 по горизонтали*/
+  margin: 0 auto; /*0 авто для того чтоб центрировался по горизонтали */
+}
+
+
+
+/*У всех заголовков одинаковый класс отступ от заголовков 40 пкс...  для тегов h1 h2 и т д*/
+.offers-heading {
+  margin: 0;
+  margin-bottom: 20px;
+  text-indent: 40px; /*отступ слева */
+  font-family: "Muller";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  color: #333333;
+}
+
+/*Для всех секций создаем общий класс
+все отступы в макете идут по 70 пикселей
+то есть делим на пополам т о решается проблема безопасности
+контента сверху и снизу чтобы он  не
+прилипал внизу и вверху, плюс проблема с отступами
+*/
+
+.section-offset {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+
+/* Fonts */
+
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+    local("Muller"),
+    url("../fonts/MullerBold.woff2") format("woff2"),
+    url("../fonts/MullerBold.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+    local("Muller"),
+    url("../fonts/MullerMedium.woff2") format("woff2"),
+    url("../fonts/MullerMedium.woff") format("woff");
+}
+
+/* !!!! не поняла где используется этот шрифт */
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+    local("Muller"),
+    url("../fonts/MullerRegular.woff2") format("woff2"),
+    url("../fonts/MullerRegular.woff") format("woff");
+}
+
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+    local("Muller"),
+    url("../fonts/MullerLight.woff2") format("woff2"),
+    url("../fonts/MullerLight.woff") format("woff");
+}
+
+
+/*Header*/
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 35px;
+
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 45px;  /*Отступы создаются от родителя, от нашего элемента*/
+
+}
+/*Работаем с внутренними отступами
+решит проблему отступов и обезопасит контент
+*/
+
+.header-top {
+  display: flex;
+  margin-bottom: 30px; /*устанавливает внешний отступ внизу элемента margin устанавливает величину отступа от каждого края элемента.*/
+  align-items: center; /*выравнивание элементов по центру*/
+}
+
+.header-top-left {    /*Header тег для шапки*/
+  display: flex;
+  align-items: center;
+  margin-right: auto;  /*Стараться не делать влево и вверх, т к они*/
+}
+
+.header-tel-cont {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 744px;
+}
+
+
+.header-tel {
+  margin-right: auto;
+  text-align: left;
+  /* добавляем стили текста ниже*/
+  font-family: "Muller";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #333333;
+
+}
+
+/* телефон прижимается к краю */
+.header-return {
+  background-position: left top;
+  line-height: 16px;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #CC9933;
+  /* margin-right: auto; не нужно */
+   /* margin-left: auto; не нужно
+  padding-left: 28px;   убрать их не нужны*/
+   /* max-width: 695px; не нужно */
+}
+
+
+.header-logo {
+  margin-right: 30px; /*Стараться не делать влево и вверх, т к они*/
+}
+
+
+/*Nav */
+
+.nav {
+  display: flex;
+  padding: 27px 45px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* align-items: center; все что ниже убераем*/
+  /* min-height: 50px;   */
+  /* max-width: 745px; */
+  /* padding-right: 55px;  */
+  /*border-right: solid 1px #E1E1E1;*/ /*В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ Задан цвет разделяющему элементу*/
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 45px;
+}
+
+.nav-link {
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #666666;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: 420px;
+  margin-bottom: -10px; убрали */
+  /* padding-left: 20px;  убрали */
+}
+
+/* Botton кнопки стили*/
+
+/* Класс который будет сбрасывать стили кнопок  */
+.btn-reset {
+  padding: 0; /*паддинг будем отдельно задавать*/
+  border: none; /*бордер не понадобится*/
+  background-color: transparent; /* будем по месту задавать*/
+  cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+}
+
+.btn-style{
+  margin-bottom: 10px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background-color: inherit;
+  border: solid 1px #CC9933;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color:#CC9933;
+}
+
+/* добавили маргины всем кроме последн эл-та */
+.btn-style:not(:last-child) {
+  margin-right: 30px;
+
+}
+
+.actions-button {
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: inherit;
+}
+
+
+/* SECTION 1*/
+/* Offers */
+/* У самих секций тут ничего нет*/
+
+
+.offer {
+  width: 49%;/* 1% на отступ */
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #b5b5b5;
+}
+
+/* добавили всем кроме последнего */
+.offer:not(:last-child) {
+  margin-bottom: 0px;
+}
+
+
+ /* справа 24 и между 2 мя карточками 24 */
+.offers-thumbs {
+  width: 49%; /* 1% на отступ */
+  margin-right: 24px;
+}
+
+
+.offers-cards {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 10px;  убрали */
+}
+
+/* данный стиль нужен только заголовкам h2 */
+.offers-heading {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.offers-card-price {
+  margin-bottom: 47px;
+  font-family: "Muller";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color:  #FFFFFF;
+}
+
+.link {
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #F0BF5F;
+}
+
+.arrow::after {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+}
+
+
+
+/* добавлены стили заголовкам h3 стили другие не как у h2 */
+.offers-card-heading {
+  max-width: 299px;
+  margin: 0px;
+  margin-bottom: 13px;
+}
+
+.offer-maldives {
+  min-height: 258px;
+  background-image: url(../Pictures/maldives.jpg);
+  font-family: "Muller";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.offer-crete_hote_tours {
+  min-height: 258px;
+  margin-bottom: 23px;
+  background-image: url(..//pictures/crete.jpg);
+  font-family: "Muller";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.offer-rooms_luxury {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  max-width: 573px;
+  min-height: 540px;
+  font-family: Muller;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: left;
+  color: #FFFFFF;
+  background-image: url(..//pictures/special-offer.jpg);
+}
+
+
+/* Люксери хидинг добавлю потом */
+/* .luxury-heading {
+font-size: 60px;
+} */
+
+
+/* SECTION 2*/
+/* About */
+
+.about-text {
+  margin: 0;
+  max-width: 888px;
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000;
+}
+
+
+
+
+/* SECTION 3*/
+/* Services */
+
+.services-heading {
+  margin-bottom: 20px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-card {
+  max-width: 573px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  min-height: 330px;
+  padding: 190px 126px 10px 45px;
+  border-radius: 15px;
+  background-color: white;
+
+  /*margin: auto;
+   min-height: 0;
+  padding: 0px 0px 0px 0px;  убрали не нужно*/
+}
+
+/* сбросили отступы у двух последних элементов */
+.services-card:nth-child(2n){
+  margin-right: 0;
+}
+
+/* Получаем отступы у всех кроме последних элементов*/
+.services-card:nth-last-child(-n + 2){
+  margin-bottom: 0;
+}
+
+.service-servicing {
+  background: url(..//pictures/exclusive_offer.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-rent {
+  background: url(..//pictures/rent.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-spa {
+  background: url(..//pictures/sauna.jpg) no-repeat;
+  background-size: contain;
+}
+
+.service-parking {
+  background: url(..//pictures/cars.jpg) no-repeat;
+  background-size: contain;
+}
+
+
+/* сбросили маргин у заголовков */
+.service-content {
+  margin: 0;
+}
+
+.servises-heading-link {
+  font-family: Muller;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #CC9933;
+
+}
+
+/* сбросили маргин у параграфа */
+.service-card-text {
+  margin: 0;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000000;
+}
+
+/* SECTION 4*/
+/* Advantages */
+
+.advantages {
+  padding-top: 35px;
+  padding-bottom: 12px;
+}
+
+.advantage {
+  margin: 0;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000000;
+}
+
+.advantages-heading {
+  margin-bottom: 30px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* задали маргины */
+.advantages-card {
+  max-width: 275px;
+  margin-bottom: 22px;
+  margin-right: 22px;
+  padding: 116px 42px 10px 45px;
+  min-height: 275px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.advantages-card:nth-child(4n){
+margin-right: 0;
+}
+
+.advantages-card:nth-last-child(-n+4){
+  margin-bottom: 0;
+}
+
+.back-color {
+  background-color: white;
+}
+
+
+.advantages-bath {
+  background: url(..//pictures/bathtub.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-hanger {
+  background: url(..//pictures/hanger.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-heating {
+  background: url(..//pictures/heating.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-key {
+  background: url(..//pictures/hotel-key.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-parking {
+  background: url(..//pictures/parking.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-reception {
+  background: url(..//pictures/reception.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-security-box {
+  background: url(..//pictures/security-box.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+.advantages-swimming-pool {
+  background: url(../pictures/swimming-pool.svg) no-repeat;
+  background-size: 65px;
+  background-position: 45px 40px;
+}
+
+
+
+/* SECTION 5*/
+/* Placement */
+
+.placement-heading {
+  margin-bottom: 20px;
+}
+
+.placement-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.placement-card {
+  display: flex;
+  flex-basis: 374px; /* делит разметку, удобно использовать чтобы разделить */
+  margin-bottom: 24px;
+  margin-right: 24px;
+  width: 32%;
+  min-height: 440px;
+  margin-bottom: 23px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
+/* селектор псевдокласса :nth-child() с расчётом количества элементов в ряду убрали маргин */
+.placement-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* сбросили у последних элементов марджин */
+.placement-card:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+
+/* 27 нужно снизу но закрываем по кругу это для безопасности контента */
+.placement-card-more{
+  display: flex;
+  justify-content:center;
+  align-items: flex-end;
+  padding: 27px;
+  background: url(../Pictures/more-variants.jpg) no-repeat;
+}
+
+/* span строчный элемент по этому делаем флекс так как блок схлопнется  */
+.placement-wrapper {
+  padding: 32px 45px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* чтобы ссылка не работала на пустом месте */
+
+}
+
+.hotel-img {
+  display: inline-block;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+
+.hotele-description-flex {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+
+.text-gray {
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #999999
+}
+
+
+.hotel-name {
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #000;
+}
+
+.hotel-descripction {
+  margin-bottom: 20px;
+}
+
+.hotel-price {
+  font-family: Muller;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: #000000;
+}
+
+.per-night {
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #000000;
+}
+
+.hotel-rooms {
+  padding: 13px 20px;
+  border-radius: 15px;
+  background-color: inherit;
+  border: 1px solid #CC9933;
+  border-radius: 10px;
+  color: #CC9933;
+}
+
+.placement-more-link {
+  font-family: "Muller";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
