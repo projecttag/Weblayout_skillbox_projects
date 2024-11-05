@@ -360,11 +360,11 @@ body {
   font-size: 60px;
 }
 
-/* данный стиль нужен только заголовкам h2 */
-.offers-heading {
+/* УБРАНО ЗАДВОЕНИИЕ СТИя данный стиль нужен только заголовкам h2 */
+/* .offers-heading {
   margin: 0;
   margin-bottom: 24px;
-}
+} */
 
 .offers-card-price {
   margin-bottom: 47px;
@@ -718,44 +718,62 @@ margin-right: 0;
 /* Хочу тур*/
 
 .want-journey {
-    width: 100%;
-    min-height: 256px;
-    border-radius: 15px;
-    line-height: 1em;
-    background-color: #E9E9E9;
+  /* width: 100%; убрали */
+  /* min-height: 256px;  убрали */
+  border-radius: 15px;
+  /* line-height: 1em;  убрали*/
+  background-color: #E9E9E9;
+  padding: 45px;
+  /* добавлен padding: 45px; */
 }
 
-.journey-heading {
+
+/* Заголовок  journey-heading  убран, вместо него
+поставлен общий заголовок */
+/* у заголовков должен быть один класс и потом надо отдельным 2-м
+классом сбросить text-indent: 0px; */
+/* .journey-heading {
   margin: 0;
-  margin-bottom: 20px;
-  text-indent: 40px; /*отступ слева */
-  font-family: "Muller";
-  font-size: 40px;
+  margin-bottom: 20px; */
+  /* text-indent: 0px; убрали это отступ слева */
+  /* font-family: "Muller";  Фонт фэмили работает от тега бади и мы не прописываем его*/
+  /* font-size: 40px;
   font-weight: 400;
   line-height: 40px;
   text-align: left;
-  color: #333333;
-  padding-top: 38px;
-}
+  color: #333333; */
+  /* padding-top: 38px; это нужно было делать от родителя т е от div верхнего второго*/
+/* } */
 
+.heading-reset {
+  text-indent: 0px;
+}
 
 .form-journey {
   display: flex;
-  align-items: flex-start;
+  /* тут меняем flex-start на center */
+  align-items: center;
   width: 1080px;
-  min-height: 106px;
-  margin: 0 auto;
+  /* min-height: 106px;  это не нужно */
+  /* margin: 0 auto; это не нужно */
   padding: 28px 25px;
-  border: none;
+  /* border: none; это не нужно */
   border-radius: 15px;
-  background-color: white;
-
+  background-color: #fff;
+  /* работаем с hex кодом а не с цветом , white убрали цвет никогда не пишем т к он работает по разному
+  на разных браузерах т е вместо одного цвета может получится другой */
+  justify-content: space-between;
+  /* добавили justify-content: space-between
+  для того чтоб выстроить элементы  */
 }
 
 .select-item {
-  width: 210px;
-  padding-right: 20px;
-  padding-left: 20px;
+  /* работаем с максимальной шириной max-width:*/
+  /* добавим ширину  width: 100%;*/
+  max-width: 168px;
+  width: 100%;
+  /* padding-right: 20px;
+  padding-left: 20px;     паддинги не нужны*/
 }
 
 .label-style {
@@ -770,13 +788,21 @@ margin-right: 0;
   border: none;
   outline: none;
   outline-offset: 0;
+  /* если не корректно работает селект то ему надо сделать ширину 100% */
+ /* чтобы он занял ширину своего родителя теперь стрелки встали на место*/
+  width: 100%;
 }
 
 .select-data {
-  width: 162px;
-  max-height: 43px;
+  /* тут меняем параметры и убираем все, делаем новые стили  */
+  /* width: 162px;
+  max-height: 43px; это приведет к сломанной верстке
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 20px; */
+  max-width: 121px;
+  /* добавили width: 100%; тк работаем с max  */
+  width: 100%;
+
 }
 
 
@@ -821,31 +847,64 @@ margin-right: 0;
 
 /* Контакты*/
 
+.contacts-block {
+  /*ПРАВИЛО! там где максы там и width: 100%; */
+  max-width: 375px;
+  width: 100%;
+}
+
+/* Задаем стили адресу */
+.adress-style {
+  /* убрали наклонный шрифт */
+  font-style: normal;
+  margin-bottom: 45px;
+}
+
 .contacts {
+  display: flex;
   position: relative;
-  padding: 44px 44px 46px 46px;
+  padding: 45px 45px 45px 45px;
   min-height: 570px;
   border-radius: 15px;
-  background-color: white;
+  background-color: #fff;
 }
 
 
 .list-contacts {
   display: flex;
   flex-direction: column;
-  width: 425px;
-  line-height: 24px;
-  list-style: none;
+  /* width: 425px;  убираем фиксированную ширину*/
+  /* line-height: 24px; */
+  /* list-style: none; */
 }
 
 .item-contacts {
   display: flex;
   padding-bottom: 17px;
   border-bottom: 1px solid #e1e1e1;
+  /* добавлен маргин боттом между эл-ми списка*/
+  margin-bottom: 25px;
+  justify-content: space-between;
 }
-.item-contacts:not(:first-child) {
-  padding-top: 17px;
+
+/* работаем с margin-bottom padding-bottom */
+/* у последнего элемента сбросить отступ */
+.item-contacts:last-child {
+  margin-bottom: 0;
+ /* можно также убрать нижнюю границу, если это необходимо */
 }
+
+.phone-style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* .item-contacts:not(:first-child) {
+  /* padding-top: 17px;  тут это не нужно*/
+/*
+} */
 
 
 .bold {
@@ -855,129 +914,166 @@ margin-right: 0;
   font-style: normal;
 }
 
-.bold-item {
-  width: 190px;
-  padding-right: 20px;
+/* это не нужно */
+/* .bold-item {
+  /* width: 190px;
+  padding-right: 20px; */
   /* padding-left: 20px; */
-}
+/* } */
 
-.paragraph-reset {
+.paragraph {
   margin: 0;
 }
 
 .contacts-info {
-  display: block;
-  width: 245px;
-  padding-left: 20px;
+  /* display: block;  это писать не нужно -параграф и так обычный */
+  /* тут заменили на макс виз  */
+  max-width: 245px;
+  width: 100%;
+  /* с максами используем виз 100%  ширину*/
+  /* padding-left: 20px; убрали*/
 }
 
-
-
-.list-contacts {
-  display: flex;
-  flex-direction: column;
-  width: 425px;
-  line-height: 24px;
-  list-style: none;
-}
-
-
-.reception-style {
-  position: absolute;
+/* стили картинки */
+/* .reception-style { */
+  /* ничего этого не нужно */
+  /* position: absolute;
   right: 44px;
   width: 653px;
   height: 528px;
   padding-bottom: 46px;
   padding-left: 35px;
-  border-style: none;
-}
+  border-style: none; */
+/* } */
 
-.contact-color {
+
+/* Этот стиль чтобы разрядить текст и вообще для тго чтобы задать
+верные стили шрифтов то есть получается как бы мини отступ по умолчанию */
+.contact-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   color: #CC9933;
 }
+
+/* Этот стиль чтобы разрядить текст и вообще для тго чтобы задать
+верные стили шрифтов */
+.contact-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+
 
 .info-color {
   color:  #999999;
 }
 
 .btn-contacts {
-  padding: 25px 18px;
+  padding: 30px 27px;
   min-width: 113px;
   border: 1px solid #CC9933;
   border-radius: 10px;
   line-height: 1em;
   color: #CC9933;
-  background-color: white;
-  margin-top: 45px;
+  background-color: #fff;
+  margin-top: 25px;
+  /* margin-top: 45px; убрали*/
 }
 
+.contacts-fon {
+  padding-left: 52px;
+}
 
 
 /* Footer*/
-footer {
-  position: relative;
-  width: 1170px;
-  min-height: 341px;
-  padding: 44px 51px 0 52px;
+.footer-main {
+  /* position: relative;
+  width: 1170px; */
+  /* max-height: 341px;
+  height: 100%; */
+  /* Дисплей флекс применить ко всему футеру
+  далее задаем отступы соц сетям  */
+  display: flex;
+  padding: 45px;
   border-radius: 15px;
   margin: 0 auto;
-  color: white;
+  color: #fff;
   background-color:  #333333;
   background-image: url(../pictures/sun.png);
   background-repeat: no-repeat;
-  background-position: top 113px right 176px;
+  background-position: top 112px right 177px;
+  margin-bottom: 30px;
 }
 
 .column-left {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: top;
-  width: 320px;
-  margin-right: 102px;
+  width: 341px;
+  margin-right: 125px;
 }
 
-.footer-paragraph {
-   margin-bottom: 50px;
-}
-
-.footer-link  {
+.footer-company {
+  margin-top: 0;
+  margin-bottom: 37px;
   display: block;
-  color: #CC9933;
-  transition: color 300ms  ease-in-out;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  color: #fff;
 }
 
-.footer-link:hover {
-  color: white;
+.footer-info {
+  margin-top: 0;
+  margin-bottom: 40px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  color: #fff;
 }
 
 .column-right {
-  display: inline-block;
+  /* display: inline-block; */
   width: 382px;
   vertical-align: top;
 }
 
 .footer-paragraph-right {
-  margin-bottom: 10px;
+  min-width: 359px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #fff;
+  font-style: normal;
 }
 
-.footer-telephone {
+.footer-phone {
   margin-bottom: 15px;
 }
 
 .contacts-footer {
   display: block;
-  color:#CC9933;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CC9933;
+  font-style: normal;
 }
 
 .footer-social {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 51px;
-  right: 51px;
+  /* position: absolute; это тут не используем*/
+  padding-left: 256px;
 }
 
 .link-social {
-  display: inline-block;
+  /* display: inline-block; не используется уже */
   margin-bottom: 20px;
 }
 
