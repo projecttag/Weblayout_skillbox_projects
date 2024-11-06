@@ -867,6 +867,9 @@ margin-right: 0;
   min-height: 570px;
   border-radius: 15px;
   background-color: #fff;
+  /* сюда добавили justify-content: space-between работаем от родителя
+  а не сам эл-т себя выстраивает  */
+  justify-content: space-between;
 }
 
 
@@ -880,7 +883,10 @@ margin-right: 0;
 
 .item-contacts {
   display: flex;
-  padding-bottom: 17px;
+  /* по макету 23 пикселя паддинг боттом по-этому
+  получалось что кнопка была выстроена не правильно
+  из этого складывается высота элемента */
+  padding-bottom: 23px;
   border-bottom: 1px solid #e1e1e1;
   /* добавлен маргин боттом между эл-ми списка*/
   margin-bottom: 25px;
@@ -978,17 +984,29 @@ margin-right: 0;
   line-height: 1em;
   color: #CC9933;
   background-color: #fff;
-  margin-top: 25px;
+  /* margin-top: 25px;  не должно этого быть
+  кнопка не дошла до низу, ошибка в другом месте
+  какой то эл-т  не сделал высоты по этому происходит то что кнопка
+  не достает до нужного уровня*/
   /* margin-top: 45px; убрали*/
 }
 
+
+
 .contacts-fon {
-  padding-left: 52px;
+  /* Убираем у картинки пэддинг лефт , пэддинг это расширение эл-та изнутри
+нужен просто отступ   */
+  /* padding-left: 52px; */
 }
 
 
 /* Footer*/
+
 .footer-main {
+ padding-bottom: 30px;
+}
+
+.footer-div {
   /* position: relative;
   width: 1170px; */
   /* max-height: 341px;
@@ -1001,15 +1019,23 @@ margin-right: 0;
   margin: 0 auto;
   color: #fff;
   background-color:  #333333;
+  /* Не проверила сайт на переполнение , надо проверять!
+  если не
+  */
   background-image: url(../pictures/sun.png);
   background-repeat: no-repeat;
-  background-position: top 112px right 177px;
-  margin-bottom: 30px;
+    /* Если переполнять футер то картинка повиснит в воздухе по этому
+  надо убрать top 112px   в background-position и написать bottom
+  то есть прижимать картинку всегда , неважно какого размера футер */
+  background-position: right 177px bottom;
+  /* margin-bottom: 30px;  не надо было делать это. Надо было делать у футера
+  у футера не марджин боттом а пэддинг боттом 30 px*/
 }
 
 .column-left {
   /* display: inline-block; */
-  vertical-align: top;
+  /* vertical-align: top;  не работаем сейчас со строчно-блочностью это убрали
+  работаем с флексами*/
   width: 341px;
   margin-right: 125px;
 }
@@ -1037,7 +1063,9 @@ margin-right: 0;
 .column-right {
   /* display: inline-block; */
   width: 382px;
-  vertical-align: top;
+  /* vertical-align: top;  убрали это отсюда*/
+  /* добавили марджин райт авто */
+  margin-right: auto;
 }
 
 .footer-paragraph-right {
@@ -1069,7 +1097,7 @@ margin-right: 0;
   display: flex;
   flex-direction: column;
   /* position: absolute; это тут не используем*/
-  padding-left: 256px;
+  /* padding-left: 256px;  этого не должно быть*/
 }
 
 .link-social {
@@ -1077,6 +1105,7 @@ margin-right: 0;
   margin-bottom: 20px;
 }
 
+/* тут выполнен сброс отступа последнего эл- та через псевдокласс */
 .link-social:not(:last-child) {
   margin-bottom: 20px;
 }
