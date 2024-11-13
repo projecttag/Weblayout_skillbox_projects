@@ -1,0 +1,1607 @@
+/* Fonts */
+/* Шрифты всегда объявляем первыми, так как браузер в первую очередь
+должен видеть их чтобы подключить. Подключение идет сверху вниз */
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+  local("Muller"),
+  url("../fonts/MullerBold.woff2") format("woff2"),
+  url("../fonts/MullerBold.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+  local("Muller"),
+  url("../fonts/MullerMedium.woff2") format("woff2"),
+  url("../fonts/MullerMedium.woff") format("woff");
+}
+
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Muller";
+  font-display: swap;
+  src:
+  local("Muller"),
+  url("../fonts/MullerRegular.woff2") format("woff2"),
+  url("../fonts/MullerRegular.woff") format("woff");
+}
+
+
+/* Main Properties Общие настройки страницы*/
+
+
+/* для простоты работы с
+  элементами все паддинги будут браться за счет самого размера элемента не будет расти
+*/
+html {
+  box-sizing: border-box;  /*будет проще работать с эл ми с его помощью */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /*и все элементы и псевдоэлементы  инхерит такие же как и у родителей как у предшествующего тега ШТМЛ*/
+}
+
+/* тут текст декорейшн для ссылок */
+a {
+  color: inherit; /* инхерит чтобы не мешались цвета*/
+  text-decoration: none;
+}
+
+/* стили для картинок */
+img {
+  max-width: 100%; /* сбросили все стили списков отступы и т д чтобы изображения не выходили
+  за границы контейнеров в котором они находятся  */
+}
+
+/* Смотрим как работают шрифтыв дев тулс в источниках-sourses */
+body {
+  min-width: 1200px;
+  font-family: "Muller", Arial, sans-serif; /*прописываем муллер в теге боди и для безопасности подключим Ариал*/
+}
+
+
+/* 2.. Увеличены зоны кликабельности для всех ссылок нельзя делать для всех ссылок, или делать избирательно
+так как перекрывает стили псевдоэлементов, возможно и другие стили, идет конфликт и стили не работают как нужно
+использовать осторожно, была проблема , была активна только одна ссылка в хэдер а остальные не работали  */
+/* div {
+  position: relative;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+
+/* glob */
+
+.body-index {
+  background-color: #F1F1F1;
+}
+
+/*Так как главный заголовок был не найден, решено было спрятать мнимый заголовок ЛАГУНА h1*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/*специальный класс для списков будет сбрасывать все атрибуты списков
+визуальные  отступы паддинг стайл. Добавлен класс и теперь список полностью плоский для легкой стилизации*/
+/*Сбросит стили списка по умолчанию задали ul */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* лист стайл нон для того чтобы списки не выделялись визуально */
+}
+
+/* Класс который будет сбрасывать стили кнопок задали button */
+.btn-reset {
+  padding: 0; /*паддинг будем отдельно задавать*/
+  border: none; /*бордер не понадобится*/
+  background-color: transparent; /* будем по месту задавать*/
+  cursor: pointer; /*курсор всегда такой чтобы пользователь понимал что элемент тактильный и по нему можно кликнуть*/
+}
+
+
+/* многие списки будем в качестве контейнера использовать по этому делаем
+доп класс флекс кот выз дисплей флекс  */
+
+/*контейнер смотреть на макете */
+.container {
+  width: 1200px;
+  padding: 0 15px; /*паддинг 0 по вертикали  и 15 по горизонтали*/
+  margin: 0 auto; /*0 авто для того чтоб центрировался по горизонтали */
+}
+
+
+
+/*У всех заголовков одинаковый класс отступ от заголовков 40 пкс...  для тегов h1 h2 и т д*/
+.offers-heading {
+  margin: 0;
+  margin-bottom: 20px;
+  text-indent: 40px; /*отступ слева */
+  font-family: "Muller";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  color: #333333;
+}
+
+/*Для всех секций создаем общий класс
+все отступы в макете идут по 70 пикселей
+то есть делим на пополам т о решается проблема безопасности
+контента сверху и снизу чтобы он  не
+прилипал внизу и вверху, плюс проблема с отступами
+*/
+
+.section-offset {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+
+
+/*Header*/
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 35px;
+
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 45px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+/*Работаем с внутренними отступами
+решит проблему отступов и обезопасит контент
+*/
+
+
+.header-top {
+  display: flex;
+  margin-bottom: 30px; /*устанавливает внешний отступ внизу элемента margin устанавливает величину отступа от каждого края элемента.*/
+  align-items: center; /*выравнивание элементов по центру*/
+}
+
+
+.header-top-left {    /*Header тег для шапки*/
+  display: flex;
+  align-items: center;
+  margin-right: auto;  /*Стараться не делать влево и вверх, т к они*/
+}
+
+.header-tel-cont {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 744px;
+}
+
+
+.header-tel {
+  margin-right: auto;
+  text-align: left;
+  /* добавляем стили текста ниже*/
+  font-family: "Muller";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #666666;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+
+/*4.. Порядок действий соблюден у ссылок 1 ховер (нот) 2 фокус 3 актив*/
+
+/* not(:focus) к селектору ховера, чтобы он не срабатывал, когда элемент находится в фокусе. */
+.header-tel:hover:not(:focus) {
+  color: #CC9933;
+}
+
+.header-tel:focus{
+  outline-offset: 5px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.header-tel:active {
+  color:#A47312; /* Цвет текста при нажатии */
+}
+
+.arrow-keyboard {
+  fill:#F0BF5F ;
+}
+
+/* телефон прижимается к краю */
+
+.header-return {
+  position: relative; /* Добавлено */
+  background-position: left top;
+  line-height: 16px;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #CC9933;
+  background-position: left center;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-image: url(../pictures/keyboard_tab.svg);
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  /*Уже есть в актив outline: none; 5.. Убирает дефолтное состояние фокуса
+  элемент не будет отображать стандартное состояние фокуса, и можно будет
+  полностью контролировать его внешний вид через кастомные стили для состояния :focus
+  */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+  /* margin-right: auto; не нужно */
+   /* margin-left: auto; не нужно
+  padding-left: 28px;   убрать их не нужны*/
+   /* max-width: 695px; не нужно */
+}
+
+
+/*4.. Порядок действий соблюден у ссылок 1 ховер (нот) 2 фокус 3 актив*/
+
+ /* когда элемент находится в состоянии :focus, эффект :hover не будет применяться. */
+/* тут смена цвета */
+ .header-return:hover:not(:focus) {
+  color: #F0BF5F;
+}
+
+/* тут обводка без смены цвета*/
+.header-return:focus {
+  outline-offset: 9px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out; /* Плавный переход для обводки */
+}
+
+/* смена цвета визуальный эффект не добавлен так как это кратковременный эффект, который пользователь
+может не заметить*/
+.header-return:active {
+  color: #A47312; /* Цвет текста при нажатии */
+  outline: none; /*Убирает дефолтное состояние фокуса
+  элемент не будет отображать стандартное состояние фокуса, и можно будет
+  полностью контролировать его внешний вид через кастомные стили для состояния :focus
+  */
+}
+
+/* тут псевдоэлемент афтер не нужен */
+/* .header-return::after {
+  content: ""; создаёт пустое содержимое, чтобы псевдоэлемент был видимым.
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #A47312;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+появляется только на сосотоянии эктив :
+.header-return:active::after {
+  opacity: 1;
+} */
+
+
+
+.header-logo {
+  margin-right: 30px; /*Стараться не делать влево и вверх, т к они*/
+}
+
+
+/*Nav */
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #666666; */
+  /* align-items: center; все что ниже убераем*/
+  /* min-height: 50px;   */
+  /* max-width: 745px; */
+  /* padding-right: 55px;  */
+  /*border-right: solid 1px #E1E1E1;*/ /*В СЛЕДУЮЩЕЙ ГЛАВЕ ВКЛЮЧИТЬ Задан цвет разделяющему элементу*/
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 45px;
+}
+
+
+.nav-link {
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #666666;
+  outline: none;
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+}
+
+/*4.. Порядок действий соблюден у ссылок 1 ховер (нот) 2 фокус 3 актив*/
+/* Состояния фокуса и ховера не должны пересекаться. Когда активен фокус
+ - ховер не должен срабатывать (используйте исключения :not). */
+
+.nav-link:hover:not(:focus) {
+  color: #CC9933;
+}
+
+.nav-link:focus {
+  outline-offset: 5px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.nav-link:active {
+  color: #A47312; /* Цвет текста при нажатии */
+  outline: none;
+}
+
+
+
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: 420px;
+  margin-bottom: -10px; убрали */
+  /* padding-left: 20px;  убрали */
+}
+
+/* Botton кнопки стили*/
+
+/* Класс который будет сбрасывать стили кнопок  */
+
+
+.btn-style {
+  position: relative;
+  /* Свойство position: relative; на кнопке
+  необходимо для правильного функционирования псевдоэлементов, таких как ::after
+  Контекст для абсолютного позиционирования: Псевдоэлемент ::after использует position: absolute;,
+  что означает, что его позиционирование рассчитывается относительно ближайшего родительского элемента
+  с position, отличным от static (по умолчанию). Установив
+  position: relative; на кнопке, мы делаем кнопку самой собой контейнером для позиционирования псевдоэлемента.
+  Корректное отображение псевдоэлемента: Без position: relative; псевдоэлемент ::after будет позиционироваться
+   относительно первого предка с установленным
+  позиционированием (например, ближайшего родительского блока), что может привести к неправильному расположению.
+  все элементы и псевдоэлементы, используемые внутри кнопки, будут размещены и растянуты относительно её границ.
+  */
+  padding: 13px 20px;
+  border-radius: 10px;
+  background-color: inherit;
+  border: solid 1px #CC9933;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color:#CC9933;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+.btn-style:hover {
+  color: #FFFFFF;
+}
+
+/* добавили маргины всем кроме последн эл-та */
+.btn-style:not(:last-child) {
+  margin-right: 30px;
+}
+
+.btn-style::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/*4.. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
+
+.btn-style:hover:not(:focus) {
+  background-color: #CC9933;
+}
+
+.btn-style:focus {
+  background-color: #CC9933;
+  color: #FFFFFF; /* Цвет текста при фокусе */
+}
+
+.btn-style:active {
+  background-color: #A47312; /* Цвет текста при нажатии */
+  color: #FFFFFF; /* Явно задаем цвет текста при нажатии */
+  outline: none; /* Убираем дефолтное состояние фокуса */
+}
+
+
+.actions-button {
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: inherit;
+}
+
+
+/* SECTION 1*/
+/* Offers */
+/*offers-cards класс родитель ставим выше всех классов*/
+
+.offers-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+ /* Классы ставить по порядку один за другим как в штмл файле*/
+.offers-thumbs {
+  margin-right: 24px;
+  max-width: 573px;
+  /* чтобы не схлопывались 100% */
+  width: 100%;
+}
+
+/* оферы это родители поведение нижних классов будет зави */
+.offer {
+  position: relative;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* прижали к краю  */
+  justify-content: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 573px;
+  width: 100%;
+  padding: 40px 108px 40px 45px;
+  border-radius: 15px;
+  color: #F0BF5F;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+  /* текст для ссылки по умолчанию */
+}
+
+/* добавили всем кроме последнего */
+.offer:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.offer::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid transparent; /* Изначально рамка невидима */
+  pointer-events: none; /* Исключает псевдоэлемент из обработки событий */
+  transition: border 0.3s ease-in-out; /* Плавный переход для рамки */
+  /*transition: border 0.3s; Плавный переход */
+}
+
+.offer:focus-within::after {
+  border: 1px solid #CC9933; /* Цвет рамки при фокусе */
+}
+
+.offer:hover {
+  background-color: none;
+}
+
+.offer a {
+  color: inherit; /* Чтобы ссылка наследовала цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  outline: none; /* Убираем стандартный фокус ссылки */
+}
+
+.offer a:focus {
+  outline: none; /* Убираем стандартный фокус ссылки */
+}
+
+
+
+
+/* .offer::after{
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px; */
+  /* border-radius: inherit; */
+  /* border: 1px solid #CC9933;
+  opacity: 0;
+  outline: none;
+} */
+
+/* .offer:focus::after {
+  opacity: 1;
+}
+
+.offer:active::after {
+  opacity: 1;
+}
+
+.offer:hover {
+  opacity: 1;
+}
+
+.offer:active {
+  opacity: 1;
+}*/
+
+
+/* 3.. Был выставлен градиент */
+.offer-maldives {
+  background-image: linear-gradient(90deg, #304059D6, #35415300),
+  url(../pictures/maldives.jpg);
+}
+
+.offer-crete_hote_tours {
+  background-image: linear-gradient(90deg, #304059D6, #35415300),
+  url(../pictures/crete.jpg);
+}
+
+.offer-rooms_luxury {
+  background-image: url(../pictures/special-offer.jpg);
+}
+
+.offers-card-heading {
+  /* у заголовков отступы по умолчанию всегда и мы их сбрасываем */
+  margin: 0 0 15px 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.luxury-heading {
+  font-size: 60px;
+}
+
+/* УБРАНО ЗАДВОЕНИИЕ СТИя данный стиль нужен только заголовкам h2 */
+/* .offers-heading {
+  margin: 0;
+  margin-bottom: 24px;
+} */
+
+.offers-card-price {
+  margin-bottom: 47px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color:  #FFFFFF;
+  opacity: 0.8;
+}
+
+.offers-card-price-big {
+  font-size: 30px;
+}
+
+.arrow::after {
+  position: relative;
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #F0BF5F; /* Задаем цвет и толщину линии сразу */
+  border-width: 2px 2px 0 0; /* Оставляем только верхнюю и правую границу */
+  transform: rotate(45deg);
+}
+
+.arrow:hover {
+  color: #F0BF5F;
+}
+/* 4.. ховер фокус актив */
+.link {
+  position: relative;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #F0BF5F;
+}
+
+.link:hover:not(:focus) {
+  color: #F0BF5F;
+}
+
+.link:focus {
+  color: #F0BF5F;
+}
+
+.link:active {
+  color: #FFFFFF; /* Цвет текста при нажатии */
+}
+
+
+/* SECTION 2*/
+/* About */
+
+.about-text {
+  margin: 0;
+  max-width: 888px;
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000;
+}
+
+
+/* SECTION 3*/
+/* Services */
+
+.services-heading {
+  margin-bottom: 20px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.services-card {
+  position: relative;
+  max-width: 573px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  min-height: 330px;
+  padding: 190px 126px 10px 45px;
+  border-radius: 15px;
+  background-color: white;
+  background-repeat: no-repeat; /* но репит прописали в основном классе*/
+  color: #F0BF5F;
+  outline: none; /* Убираем дефолтный фокус */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+  /*margin: auto;
+   min-height: 0;
+  padding: 0px 0px 0px 0px;  убрали не нужно*/
+}
+
+/* сбросили отступы у двух последних элементов */
+.services-card:nth-child(2n){
+  margin-right: 0;
+}
+
+/* Получаем отступы у всех кроме последних элементов*/
+.services-card:nth-last-child(-n + 2){
+  margin-bottom: 0;
+}
+
+.services-card::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid transparent; /* Изначально рамка невидима */
+  pointer-events: none; /* Исключает псевдоэлемент из обработки событий */
+  transition: border 0.3s ease-in-out; /* Плавный переход для рамки */
+  /*transition: border 0.3s; Плавный переход */
+}
+
+.services-card:focus-within::after {
+  border: 1px solid #CC9933; /* Цвет рамки при фокусе */
+}
+
+.services-card:hover {
+  background-color: none;
+}
+
+.services-card a {
+  color: inherit; /* Чтобы ссылка наследовала цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  outline: none; /* Убираем стандартный фокус ссылки */
+}
+
+.services-card a:focus {
+  outline: none; /* Убираем стандартный фокус ссылки */
+}
+
+.services-card a:active {
+  color: #A47312; /* Цвет текста при нажатии */
+}
+
+/* .services-card::after{
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px; */
+  /* border-radius: inherit; */
+  /* border: 1px solid #CC9933;
+  opacity: 0;
+  outline: none;
+} */
+
+/* .services-card:focus::after,
+.services-card:active::after {
+  opacity: 1;  */
+  /* Делаем бордер видимым при фокусе и нажатии */
+/* } */
+
+/* .services-card:hover {
+  background-color: #CC9933;
+}
+
+.services-card:active {
+  background-color: #CC9933;
+} */
+
+
+
+
+
+
+
+.service-servicing {
+  background-image: url(../pictures/exclusive_offer.jpg);
+}
+
+.service-rent {
+  background-image: url(../pictures/rent.jpg);
+}
+
+.service-spa {
+  background-image: url(../pictures/sauna.jpg);
+}
+
+.service-parking {
+  background-image: url(../pictures/cars.jpg);
+}
+
+
+/* сбросили маргин у заголовков */
+.service-content {
+  margin: 0;
+}
+
+.servises-heading-link {
+  font-family: Muller;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #CC9933;
+
+}
+
+/* сбросили маргин у параграфа */
+.service-card-text {
+  margin: 0;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000000;
+}
+
+/* SECTION 4*/
+/* Advantages */
+
+.advantages {
+  padding-top: 35px;
+  padding-bottom: 12px;
+}
+
+.advantage {
+  margin: 0;
+  font-family: "Muller";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #000000;
+}
+
+.advantages-heading {
+  margin-bottom: 30px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px; /* Используем gap вместо margin-right для лучшей адаптивности */
+}
+
+/* задали маргины */
+.advantages-card {
+  max-width: 275px;
+  /* margin-bottom: 22px; */
+  /* margin-right: 22px; */
+  padding: 116px 42px 10px 45px;
+  min-height: 275px;
+  border-radius: 15px;
+  background-color: white;
+  background-position: 45px 40px;
+  background-repeat: no-repeat;
+}
+
+.advantages-card:nth-child(4n){
+  margin-right: 0;
+}
+
+/*1.. Урок 10-11 задан маргин 0 последним 2-м карточкам */
+
+/* .advantages-card:nth-last-child(-n+2) {
+  margin-bottom: 0;
+} */
+
+
+/* .advantages-card:nth-last-child(-n+4){
+  margin-bottom: 0;
+} */
+
+.back-color {
+  background-color: white;
+}
+
+
+.advantages-bath {
+  background-image: url(../pictures/bathtub.svg);
+}
+
+.advantages-hanger {
+  background-image: url(../pictures/hanger.svg);
+}
+
+.advantages-heating {
+ background-image: url(../pictures/heating.svg);
+}
+
+.advantages-key {
+  background-image: url(../pictures/hotel-key.svg);
+}
+
+.advantages-parking {
+  background-image: url(../pictures/parking.svg);
+}
+
+.advantages-reception {
+ background-image: url(../pictures/reception.svg);
+}
+
+.advantages-security-box {
+  background-image: url(../pictures/security-box.svg);
+}
+
+.advantages-swimming-pool {
+  background-image: url(../pictures/swimming-pool.svg);
+}
+
+/* SECTION 5*/
+/* Placement */
+
+.placement-heading {
+  margin-bottom: 20px;
+}
+
+.placement-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.placement-card {
+  display: flex;
+  flex-basis: 374px; /* делит разметку, удобно использовать чтобы разделить */
+  margin-bottom: 24px;
+  margin-right: 24px;
+  width: 32%;
+  min-height: 440px;
+  margin-bottom: 23px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
+/* селектор псевдокласса :nth-child() с расчётом количества элементов в ряду убрали маргин */
+.placement-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* сбросили у последних элементов марджин */
+.placement-card:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+
+/* 27 нужно снизу но закрываем по кругу это для безопасности контента */
+.placement-card-more{
+  display: flex;
+  justify-content:center;
+  align-items: flex-end;
+  padding: 27px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../pictures/more-variants.jpg);
+}
+
+
+/* span строчный элемент по этому делаем флекс так как блок схлопнется  */
+.placement-wrapper {
+  padding: 32px 45px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* чтобы ссылка не работала на пустом месте */
+}
+
+.hotel-img {
+  display: inline-block;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+
+.hotele-description-flex {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+
+.text-gray {
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #999999
+}
+
+
+.hotel-name {
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #000;
+}
+
+.hotel-descripction {
+  margin-bottom: 20px;
+}
+
+.hotel-price {
+  font-family: Muller;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: #000000;
+}
+
+.rating-span {
+  margin-left: 52px;
+}
+
+.per-night {
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #000000;
+}
+
+.hotel-rooms {
+  position: relative;
+    /* Свойство position: relative; на кнопке
+  необходимо для правильного функционирования псевдоэлементов, таких как ::after
+  Контекст для абсолютного позиционирования: Псевдоэлемент ::after использует position: absolute;,
+  что означает, что его позиционирование рассчитывается относительно ближайшего родительского элемента
+  с position, отличным от static (по умолчанию). Установив
+  position: relative; на кнопке, мы делаем кнопку самой собой контейнером для позиционирования псевдоэлемента.
+  Корректное отображение псевдоэлемента: Без position: relative; псевдоэлемент ::after будет позиционироваться
+   относительно первого предка с установленным
+  позиционированием (например, ближайшего родительского блока), что может привести к неправильному расположению.
+  все элементы и псевдоэлементы, используемые внутри кнопки, будут размещены и растянуты относительно её границ.
+  */
+  padding: 13px 20px;
+  background-color: inherit;
+  border: 1px solid #CC9933;
+  border-radius: 10px;
+  color: #CC9933;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+.hotel-rooms:hover {
+  color: #FFFFFF;
+  background-color: #CC9933; /* Цвет фона при наведении */
+}
+
+.hotel-rooms::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/*4. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
+
+.hotel-rooms:hover:not(:focus) {
+  background-color: #CC9933;
+}
+
+.hotel-rooms:focus {
+  background-color: #CC9933;
+  color: #FFFFFF; /* Цвет текста при фокусе */
+}
+
+.hotel-rooms:active {
+  background-color: #A47312; /* Цвет текста при нажатии */
+  color: #FFFFFF; /* Явно задаем цвет текста при нажатии */
+}
+
+
+
+.placement-more-link {
+  font-family: "Muller";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+
+
+
+/* Хочу тур*/
+
+.want-journey {
+  /* width: 100%; убрали */
+  /* min-height: 256px;  убрали */
+  border-radius: 15px;
+  /* line-height: 1em;  убрали*/
+  background-color: #E9E9E9;
+  padding: 45px;
+  /* добавлен padding: 45px; */
+}
+
+
+/* Заголовок  journey-heading  убран, вместо него
+поставлен общий заголовок */
+/* у заголовков должен быть один класс и потом надо отдельным 2-м
+классом сбросить text-indent: 0px; */
+/* .journey-heading {
+  margin: 0;
+  margin-bottom: 20px; */
+  /* text-indent: 0px; убрали это отступ слева */
+  /* font-family: "Muller";  Фонт фэмили работает от тега бади и мы не прописываем его*/
+  /* font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  color: #333333; */
+  /* padding-top: 38px; это нужно было делать от родителя т е от div верхнего второго*/
+/* } */
+
+.heading-reset {
+  text-indent: 0px;
+}
+
+.form-journey {
+  display: flex;
+  /* тут меняем flex-start на center */
+  align-items: center;
+  width: 1080px;
+  /* min-height: 106px;  это не нужно */
+  /* margin: 0 auto; это не нужно */
+  padding: 28px 25px;
+  /* border: none; это не нужно */
+  border-radius: 15px;
+  background-color: #fff;
+  /* работаем с hex кодом а не с цветом , white убрали цвет никогда не пишем т к он работает по разному
+  на разных браузерах т е вместо одного цвета может получится другой */
+  justify-content: space-between;
+  /* добавили justify-content: space-between
+  для того чтоб выстроить элементы  */
+}
+
+.select-item {
+  /* работаем с максимальной шириной max-width:*/
+  /* добавим ширину  width: 100%;*/
+  max-width: 168px;
+  width: 100%;
+  /* padding-right: 20px;
+  padding-left: 20px;     паддинги не нужны*/
+}
+
+.label-style {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1em;
+}
+
+.select-place {
+  text-transform: none;
+  border: none;
+  outline: none;
+  outline-offset: 0;
+  /* если не корректно работает селект то ему надо сделать ширину 100% */
+ /* чтобы он занял ширину своего родителя теперь стрелки встали на место*/
+  width: 100%;
+}
+
+.select-data {
+  /* тут меняем параметры и убираем все, делаем новые стили  */
+  /* width: 162px;
+  max-height: 43px; это приведет к сломанной верстке
+  padding-left: 20px;
+  padding-right: 20px; */
+  max-width: 121px;
+  /* добавили width: 100%; тк работаем с max  */
+  width: 100%;
+
+}
+
+
+.input-original {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  overflow: visible;
+  border: none;
+  outline: none;
+  outline-offset: 0;
+
+}
+
+.input-date {
+  width: 162px;
+  line-height: 1em;
+  padding-right: 30px;
+  background-color: transparent;
+}
+
+.input-number {
+  width: 162px;
+  line-height: 1em;
+  padding-right: 25px;
+  background-color: transparent;
+}
+
+.btn-form {
+  position: relative;
+  padding: 13px 30px;
+  min-width: 113px;
+  border: 1px solid #cc9933;
+  border-radius: 10px;
+  color: #cc9933;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+.btn-form:hover {
+  color: #FFFFFF;
+}
+
+.btn-form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/*4.. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
+
+.btn-form:hover:not(:focus) {
+  background-color: #CC9933;
+}
+
+.btn-form:focus {
+  background-color: #CC9933;
+  color: #FFFFFF; /* Цвет текста при фокусе */
+}
+
+.btn-form:active {
+  background-color: #A47312; /* Цвет текста при нажатии */
+  color: #FFFFFF; /* Явно задаем цвет текста при нажатии */
+}
+
+
+
+
+/* Контакты*/
+
+.contacts-block {
+  /*ПРАВИЛО! там где максы там и width: 100%; */
+  max-width: 375px;
+  width: 100%;
+}
+
+/* Задаем стили адресу */
+.adress-style {
+  /* убрали наклонный шрифт */
+  font-style: normal;
+  margin-bottom: 45px;
+}
+
+.contacts {
+  display: flex;
+  position: relative;
+  padding: 45px 45px 45px 45px;
+  min-height: 570px;
+  border-radius: 15px;
+  background-color: #fff;
+  /* сюда добавили justify-content: space-between работаем от родителя
+  а не сам эл-т себя выстраивает  */
+  justify-content: space-between;
+}
+
+
+.list-contacts {
+  display: flex;
+  flex-direction: column;
+  /* width: 425px;  убираем фиксированную ширину*/
+  /* line-height: 24px; */
+  /* list-style: none; */
+}
+
+.item-contacts {
+  display: flex;
+  /* по макету 23 пикселя паддинг боттом по-этому
+  получалось что кнопка была выстроена не правильно
+  из этого складывается высота элемента */
+  padding-bottom: 23px;
+  border-bottom: 1px solid #e1e1e1;
+  /* добавлен маргин боттом между эл-ми списка*/
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+/* работаем с margin-bottom padding-bottom */
+/* у последнего элемента сбросить отступ */
+.item-contacts:last-child {
+  margin-bottom: 0;
+ /* можно также убрать нижнюю границу, если это необходимо */
+}
+
+.phone-style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* .item-contacts:not(:first-child) {
+  /* padding-top: 17px;  тут это не нужно*/
+/*
+} */
+
+
+/* это не нужно */
+/* .bold-item {
+  /* width: 190px;
+  padding-right: 20px; */
+  /* padding-left: 20px; */
+/* } */
+
+.paragraph {
+  margin: 0;
+}
+
+.contacts-info {
+  /* display: block;  это писать не нужно -параграф и так обычный */
+  /* тут заменили на макс виз  */
+  max-width: 245px;
+  width: 100%;
+  /* с максами используем виз 100%  ширину*/
+  /* padding-left: 20px; убрали*/
+}
+
+/* стили картинки */
+/* .reception-style { */
+  /* ничего этого не нужно */
+  /* position: absolute;
+  right: 44px;
+  width: 653px;
+  height: 528px;
+  padding-bottom: 46px;
+  padding-left: 35px;
+  border-style: none; */
+/* } */
+
+
+/* Этот стиль чтобы разрядить текст и вообще для тго чтобы задать
+верные стили шрифтов то есть получается как бы мини отступ по умолчанию */
+.contact-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CC9933;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+
+/*4.. Порядок действий соблюден у ссылок ховер (нот) фокус актив*/
+
+ /* когда элемент находится в состоянии :focus, эффект :hover не будет применяться. */
+.contact-link:hover:not(:focus) {
+  color: #F0BF5F;
+}
+
+.contact-link:focus {
+  outline-offset: 2px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.contact-link:active {
+  color: #A47312; /* Цвет текста при нажатии */
+  outline: none; /*Убирает дефолтное состояние фокуса
+  элемент не будет отображать стандартное состояние фокуса, и можно будет
+  полностью контролировать его внешний вид через кастомные стили для состояния :focus
+  */
+}
+
+
+
+
+
+/* Этот стиль чтобы разрядить текст и вообще для тго чтобы задать
+верные стили шрифтов */
+.contact-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+
+
+.info-color {
+  color:  #999999;
+}
+
+.btn-contacts {
+  position: relative;
+  padding: 30px 27px;
+  min-width: 113px;
+  border: 1px solid #CC9933;
+  border-radius: 10px;
+  line-height: 1em;
+  color: #CC9933;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+  font-style: normal;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Добавлено для плавного перехода */
+  /* margin-top: 25px;  не должно этого быть
+  кнопка не дошла до низу, ошибка в другом месте
+  какой то эл-т  не сделал высоты по этому происходит то что кнопка
+  не достает до нужного уровня*/
+  /* margin-top: 45px; убрали*/
+}
+
+.btn-contacts:hover {
+  color: #FFFFFF;
+}
+
+.btn-contacts::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/*4.. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
+
+.btn-contacts:hover:not(:focus) {
+  background-color: #CC9933;
+}
+
+.btn-contacts:focus {
+  background-color: #CC9933;
+  color: #FFFFFF; /* Цвет текста при фокусе */
+  outline: none; /* Убираем дефолтный контур фокуса */
+}
+
+.btn-contacts:active {
+  background-color: #A47312; /* Цвет текста при нажатии */
+  color: #FFFFFF; /* Явно задаем цвет текста при нажатии */
+}
+
+
+/* .contacts-fon {  Убрали*/
+  /* Убираем у картинки пэддинг лефт , пэддинг это расширение эл-та изнутри
+нужен просто отступ   */
+  /* padding-left: 52px; */
+/* } */
+
+
+/* Footer*/
+
+.footer-main {
+ padding-bottom: 30px;
+}
+
+.footer-div {
+  /* position: relative;
+  width: 1170px; */
+  /* max-height: 341px;
+  height: 100%; */
+  /* Дисплей флекс применить ко всему футеру
+  далее задаем отступы соц сетям  */
+  display: flex;
+  padding: 45px;
+  border-radius: 15px;
+  margin: 0 auto;
+  color: #fff;
+  background-color:  #333333;
+  /* Не проверила сайт на переполнение , надо проверять!
+  если не
+  */
+  background-image: url(../pictures/sun.png);
+  background-repeat: no-repeat;
+    /* Если переполнять футер то картинка повиснит в воздухе по этому
+  надо убрать top 112px   в background-position и написать bottom
+  то есть прижимать картинку всегда , неважно какого размера футер */
+  background-position: right 177px bottom;
+  /* margin-bottom: 30px;  не надо было делать это. Надо было делать у футера
+  у футера не марджин боттом а пэддинг боттом 30 px*/
+}
+
+.column-left {
+  /* display: inline-block; */
+  /* vertical-align: top;  не работаем сейчас со строчно-блочностью это убрали
+  работаем с флексами*/
+  width: 341px;
+  margin-right: 125px;
+}
+
+.footer-company {
+  margin-top: 0;
+  margin-bottom: 37px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  color: #fff;
+}
+
+.footer-info {
+  margin-top: 0;
+  margin-bottom: 40px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  color: #fff;
+}
+
+.column-right {
+  /* display: inline-block; */
+  width: 382px;
+  /* vertical-align: top;  убрали это отсюда*/
+  /* добавили марджин райт авто */
+  margin-right: auto;
+}
+
+.footer-paragraph-right {
+  min-width: 359px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #fff;
+  font-style: normal;
+}
+
+.footer-phone {
+  margin-bottom: 15px;
+}
+
+.contacts-footer {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CC9933;
+  font-style: normal;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; это тут не используем*/
+  /* padding-left: 256px;  этого не должно быть*/
+}
+
+.link-social {
+  /* display: inline-block; не используется уже */
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* тут выполнен сброс отступа последнего эл- та через псевдокласс */
+.link-social:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* стили для соцсетей */
+
+.link-social svg {
+  fill: #999999;
+  transition: fill 0.3s ease-in-out; /* Плавный переход для изменения цвета */
+}
+
+/*4.. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
+
+.link-social:hover svg {
+  fill: #CC9933;
+}
+
+.link-social:focus svg {
+  fill: #CC9933;
+}
+
+.link-social:active svg {
+  fill: #A47312; /* Цвет текста при нажатии */
+}
