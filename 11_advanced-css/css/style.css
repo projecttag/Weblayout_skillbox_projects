@@ -225,6 +225,7 @@ a:before {
 }
 
 .header-tel:focus{
+  color: #A47312; /* Меняем цвет текста при фокусе */
   outline-offset: 5px;
   outline: 1px solid #CC9933;
   transition: outline-offset 0.3s ease-in-out;
@@ -241,6 +242,8 @@ a:before {
 /* телефон прижимается к краю */
 
 .header-return {
+  display: flex;
+  align-items: center;
   position: relative; /* Добавлено */
   background-position: left top;
   line-height: 16px;
@@ -249,11 +252,12 @@ a:before {
   font-weight: 400;
   line-height: 16px;
   color: #CC9933;
-  background-position: left center;
+  /* удаляем картинку и вставляем ее в ссылку  */
+  /* background-position: left center;
   background-size: 24px 24px;
   background-repeat: no-repeat;
   padding-left: 30px;
-  background-image: url(../pictures/keyboard_tab.svg);
+  background-image: url(../pictures/keyboard_tab.svg); */
   outline: none; /* Убираем дефолтное состояние фокуса */
   /*Уже есть в актив outline: none; 5.. Убирает дефолтное состояние фокуса
   элемент не будет отображать стандартное состояние фокуса, и можно будет
@@ -266,6 +270,11 @@ a:before {
    /* max-width: 695px; не нужно */
 }
 
+.header-return svg {
+  margin-right: 5px; /* Добавит отступ между иконкой и текстом */
+  fill: #CC9933; /* Цвет стрелки */
+  transition: fill 0.3s ease-in-out; /* Плавный переход для стрелки */
+}
 
 /*4.. Порядок действий соблюден у ссылок 1 ховер (нот) 2 фокус 3 актив*/
 
@@ -273,6 +282,10 @@ a:before {
 /* тут смена цвета */
  .header-return:hover:not(:focus) {
   color: #F0BF5F;
+}
+
+.header-return:hover:not(:focus) svg {
+  fill: #F0BF5F; /* Цвет стрелки при наведении */
 }
 
 /* тут обводка без смены цвета*/
@@ -292,9 +305,12 @@ a:before {
   */
 }
 
+.header-return:active svg {
+  fill: #A47312; /* Цвет стрелки при нажатии */
+}
 /* тут псевдоэлемент афтер не нужен */
 /* .header-return::after {
-  content: ""; создаёт пустое содержимое, чтобы псевдоэлемент был видимым.
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -303,9 +319,9 @@ a:before {
   background-color: #A47312;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-}
+} */
 
-появляется только на сосотоянии эктив :
+/*появляется только на сосотоянии эктив :
 .header-return:active::after {
   opacity: 1;
 } */
@@ -360,6 +376,7 @@ a:before {
 }
 
 .nav-link:focus {
+  color: #A47312; /* Меняем цвет текста при фокусе */
   outline-offset: 5px;
   outline: 1px solid #CC9933;
   transition: outline-offset 0.3s ease-in-out;
@@ -369,9 +386,6 @@ a:before {
   color: #A47312; /* Цвет текста при нажатии */
   outline: none;
 }
-
-
-
 
 .actions {
   display: flex;
@@ -497,6 +511,14 @@ a:before {
   /* текст для ссылки по умолчанию */
 }
 
+.offer a {
+  color: inherit; /* Чтобы ссылка наследовала цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  outline: none; /* Убираем стандартный фокус ссылки */
+}
+
+
+
 /* добавили всем кроме последнего */
 .offer:not(:last-child) {
   margin-bottom: 24px;
@@ -515,26 +537,28 @@ a:before {
   /*transition: border 0.3s; Плавный переход */
 }
 
-.offer:focus-within::after {
-  border: 1px solid #CC9933; /* Цвет рамки при фокусе */
-}
+
+/* 4.. ховер фокус актив */
 
 .offer:hover {
   background-color: none;
-}
-
-.offer a {
-  color: inherit; /* Чтобы ссылка наследовала цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  outline: none; /* Убираем стандартный фокус ссылки */
 }
 
 .offer a:focus {
   outline: none; /* Убираем стандартный фокус ссылки */
 }
 
+.offer:focus-within::after {
+  border: 1px solid #CC9933; /* Цвет рамки при фокусе */
+}
 
+.offer:active {
+  color: #FFFFFF; /* Меняем цвет текста при нажатии */
+}
 
+.offer a:active {
+  color: inherit; /* Наследует цвет от родителя */
+}
 
 /* .offer::after{
   content: "";
@@ -613,22 +637,24 @@ a:before {
   font-size: 30px;
 }
 
-.arrow::after {
+/* .arrow::after {
   position: relative;
   content: "";
   display: inline-block;
   width: 11px;
   height: 11px;
-  border: 2px solid #F0BF5F; /* Задаем цвет и толщину линии сразу */
-  border-width: 2px 2px 0 0; /* Оставляем только верхнюю и правую границу */
+  border: 2px solid #F0BF5F;
+  border-width: 2px 2px 0 0;
   transform: rotate(45deg);
-}
+} */
 
-.arrow:hover {
+/* .arrow:hover {
   color: #F0BF5F;
-}
+} */
 /* 4.. ховер фокус актив */
 .link {
+  display: flex;
+  align-items: center;
   position: relative;
   font-family: "Muller";
   font-size: 16px;
@@ -638,17 +664,37 @@ a:before {
   color: #F0BF5F;
 }
 
-.link:hover:not(:focus) {
-  color: #F0BF5F;
+.link svg {
+  margin-left: 6px; /* Добавит отступ между иконкой и текстом */
 }
 
-.link:focus {
-  color: #F0BF5F;
+/*эффекты для svg-стрелочки*/
+
+.link svg {
+  transition: transform 0.5s ease-in-out, stroke 2.5s ease-in-out;
 }
 
-.link:active {
-  color: #FFFFFF; /* Цвет текста при нажатии */
+.link path {
+  stroke: #F0BF5F;
+  transition: stroke 0.5s ease-in-out;
 }
+
+.link:focus-visible path {
+  stroke: #F0BF5F;
+}
+
+.link:hover:not(:focus-visible) svg {
+  transform: translateX(10px);
+}
+
+.link:hover:not(:focus-visible) path {
+  stroke: #F0BF5F;
+}
+
+.link:active:not(:focus-visible) path {
+  stroke: #F0BF5F;
+}
+
 
 
 /* SECTION 2*/
@@ -722,20 +768,24 @@ a:before {
 
 .services-card:focus-within::after {
   border: 1px solid #CC9933; /* Цвет рамки при фокусе */
+
 }
 
-.services-card:hover {
-  background-color: none;
+.services-card:hover a {
+  /* background-color: none; */
+  color: #F0BF5F;
 }
 
 .services-card a {
-  color: inherit; /* Чтобы ссылка наследовала цвет текста */
+  /* color: inherit;  Чтобы ссылка наследовала цвет текста  */
   text-decoration: none; /* Убираем подчеркивание */
   outline: none; /* Убираем стандартный фокус ссылки */
+  transition: color 0.3s ease-in-out; /* Плавный переход для цвета текста ссылки */
 }
 
 .services-card a:focus {
   outline: none; /* Убираем стандартный фокус ссылки */
+  color: #CC9933;
 }
 
 .services-card a:active {
@@ -798,14 +848,49 @@ a:before {
 }
 
 .servises-heading-link {
+  display: flex;
+  align-items: center;
   font-family: Muller;
   font-size: 20px;
   font-weight: 500;
   line-height: 40px;
   text-align: left;
   color: #CC9933;
-
+  transition: transform 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
+
+/* стили стрелки */
+.servises-heading-link svg {
+  margin-left: 6px; /* Добавит отступ между иконкой и текстом */
+}
+
+.servises-heading-link svg {
+  transition: transform 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.servises-heading-link path {
+  stroke: #CC9933;
+  transition: stroke 0.3s ease-in-out;
+}
+
+.servises-heading-link:focus-visible path {
+  stroke: #F0BF5F;
+}
+
+.servises-heading-link:hover:not(:focus-visible) svg {
+  transform: translateX(10px);
+}
+
+.servises-heading-link:hover:not(:focus-visible) path {
+  stroke: #F0BF5F;
+}
+
+.servises-heading-link:active:not(:focus-visible) path {
+  stroke: #F0BF5F;
+}
+
+
+
 
 /* сбросили маргин у параграфа */
 .service-card-text {
@@ -1089,8 +1174,25 @@ a:before {
   line-height: 40px;
   text-align: left;
   color: #FFFFFF;
+  outline: none;
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
 }
 
+.placement-more-link:hover:not(:focus) {
+  color: #CC9933;
+}
+
+.placement-more-link:focus {
+  color: #A47312; /* Меняем цвет текста при фокусе */
+  outline-offset: 5px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.placement-more-link:active {
+  color: #A47312; /* Цвет текста при нажатии */
+  outline: none;
+}
 
 
 
@@ -1162,7 +1264,7 @@ a:before {
   line-height: 1em;
 }
 
-.select-place {
+.select-lable {
   text-transform: none;
   border: none;
   outline: none;
@@ -1170,7 +1272,32 @@ a:before {
   /* если не корректно работает селект то ему надо сделать ширину 100% */
  /* чтобы он занял ширину своего родителя теперь стрелки встали на место*/
   width: 100%;
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
 }
+
+.select-lable:hover:not(:focus) {
+  color: #CC9933;
+}
+
+.select-lable:focus{
+  color: #A47312;
+  /* outline-offset: 5px; */
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.select-lable:active {
+  color:#A47312;
+}
+
+
+
+
+
+
+
+
+
 
 .select-data {
   /* тут меняем параметры и убираем все, делаем новые стили  */
@@ -1565,6 +1692,26 @@ a:before {
   line-height: 24px;
   color: #CC9933;
   font-style: normal;
+  outline: none; /* Убираем дефолтное состояние фокуса */
+  transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out; /* Добавлено для плавного перехода */
+}
+
+.contacts-footer:hover:not(:focus) {
+  color: #F0BF5F;
+}
+
+.contacts-footer:focus {
+  outline-offset: 2px;
+  outline: 1px solid #CC9933;
+  transition: outline-offset 0.3s ease-in-out;
+}
+
+.contacts-footer:active {
+  color: #A47312; /* Цвет текста при нажатии */
+  outline: none; /*Убирает дефолтное состояние фокуса
+  элемент не будет отображать стандартное состояние фокуса, и можно будет
+  полностью контролировать его внешний вид через кастомные стили для состояния :focus
+  */
 }
 
 .footer-social {
@@ -1577,31 +1724,36 @@ a:before {
 .link-social {
   /* display: inline-block; не используется уже */
   margin-bottom: 20px;
+  /* outline: none; */
+}
+
+.image-footer {
   outline: none;
+  transition: color 0.3s ease-in-out;
 }
 
 /* тут выполнен сброс отступа последнего эл- та через псевдокласс */
-.link-social:not(:last-child) {
+.image-footer:not(:last-child) {
   margin-bottom: 20px;
 }
 
 /* стили для соцсетей */
 
-.link-social svg {
+.image-footer svg {
   fill: #999999;
   transition: fill 0.3s ease-in-out; /* Плавный переход для изменения цвета */
 }
 
 /*4.. Порядок действий соблюден у кнопок ховер (нот) фокус актив*/
 
-.link-social:hover svg {
+.image-footer:hover svg {
   fill: #CC9933;
 }
 
-.link-social:focus svg {
+.image-footer:focus svg {
   fill: #CC9933;
 }
 
-.link-social:active svg {
+.image-footer:active svg {
   fill: #A47312; /* Цвет текста при нажатии */
 }
