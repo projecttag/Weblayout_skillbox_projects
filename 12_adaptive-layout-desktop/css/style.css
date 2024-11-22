@@ -227,6 +227,7 @@ img {
 }
 
 .header__logo {
+  /* Выравнивает все эл-ты от логотипа к правому краю оставляя промежуток margin-right: auto;*/
   margin-right: auto;
   align-items: center;
 }
@@ -234,13 +235,12 @@ img {
 .header__logo--img {
   max-width: 100%;
   height: auto;
-  margin-right: 12px;
 }
 
-.header__logo--company {
+/* .header__logo--company {
   max-width: 100%;
   height: auto;
-}
+} */
 
 .nav__list {
   column-gap: 84px;
@@ -295,11 +295,12 @@ img {
   opacity: 1;
 }
 
-.header__search {
+/* .header__search {
   transform: translateX(23px);
-  /*  используется для перемещения элемента вдоль вертикальной оси
-  (по оси Y) на 7 пикселей вниз*/
-}
+} */
+/*  используется для перемещения элемента вдоль вертикальной оси
+  (по оси x) на 23 пикселей вниз тут не нужен */
+
 
 .header__search--link {
   margin-left: auto;
@@ -400,58 +401,54 @@ img {
   background-color: var(--active-color);
 }
 
-
-
 /* about */
 
-.aboutUs__section--offset {
-  padding-top: 29px;
-  padding-bottom: 50px;
-}
+/* .aboutus {
+  padding-bottom: 101px;
+} */
 
-.aboutUs__title {
+.aboutus__title {
   margin: 0;
+  padding-top: 25px;
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 48px;
   color: var(--black-color);
 }
 
-.aboutUs__descr {
-  margin: 0;
+.aboutus__descr {
   max-width: 1235px;
   margin-bottom: 50px;
   color: var(--black-color);
   font-size: 16px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 200%;
 }
 
-.aboutUs__list {
-  flex-wrap: wrap;
+/* офсет пользовательская переменная */
+.aboutus__list {
+  display: flex;
+  /* flex-wrap: nowrap; */
   --offsets: 1;
   gap: var(--gap);
 }
 
-.aboutUs__list--content {
+.aboutus__list-content {
   flex-direction: column;
   width: calc((100% - (var(--offsets) * var(--gap))) / (var(--offsets) + 1));
   gap: 33px;
 }
 
-
-/* паддингами делаем отступ от текста тем самым увеличиваем или уменьшаем картинку
-то есть подстраиваем ее размер всегда- сам контейнер синий зависит от паддингов */
-.aboutUs__item {
+.aboutus__item {
   position: relative;
   flex: 1;
   flex-direction: column;
-  padding: 65px 117px 65px 292px;
+  padding: 64px 117px 64px 299px;
   border-radius: 32px;
   outline: 1px solid var(--font-grey);
 }
 
-.aboutUs__item--big {
+.aboutus__item-big {
   position: relative;
   flex: 1;
   flex-direction: column;
@@ -459,13 +456,13 @@ img {
   /* min-width: 868px; */
   /* width: ; */
   border-radius: 32px;
-  background-image: url("../img/about-bg.png");
+  background-image: url('../img/about-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.aboutUs__item-big--content {
+.aboutus__item-big-content {
   width: 100%;
   justify-content: space-between;
   padding: 50px;
@@ -473,16 +470,16 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.aboutUs__item-big--descr {
-  margin: 0;
+.aboutus__item-big-descr {
+  /* min-width: 433px; */
   max-width: 60%;
   color: var(--white-color);
   font-size: 16px;
   font-weight: 700;
-  line-height: 32px;
+  line-height: 200%;
 }
 
-.aboutUs__item--btn {
+.aboutus__item-link {
   display: block;
   position: relative;
   align-self: center;
@@ -497,37 +494,72 @@ img {
   transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.aboutUs__item--btn:focus {
+.aboutus__item-link:focus {
   outline: none;
   background-color: var(--main-color);
 }
 
-.aboutUs__item--btn:hover {
+.aboutus__item-link:hover {
   background-color: var(--main-color);
 }
 
-.aboutUs__item--btn:active {
+.aboutus__item-link:active {
   border: 3px solid var(--active-color);
   background-color: var(--active-color);
 }
 
-.aboutUs__img {
-  position: absolute;
-  left: 59px;
-  bottom: 65px;
-  top: 50%;
-  transform: translateY(-50%);
+.aboutus__list-content {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% -(var(--offsets)* var(--gap))) /(var(--offsets) + 1));
+  gap: 33px;
 }
 
-.aboutUs__item--title {
-  margin: 0;
+.aboutus__item {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  padding: 64px 117px 64px 299px;
+  border-radius: 32px;
+  outline: 1px solid var(--font-grey);
+}
+
+.aboutus-cubeimg {
+  background: no-repeat;
+  background-image: url('../img/cube.svg');
+}
+
+.aboutus__item-title {
   margin-bottom: 9px;
   font-size: 24px;
   font-weight: 700;
 }
 
-.aboutUs__item--descr {
-  margin: 0;
+.aboutus__item-descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.aboutus__item-title {
+  margin-bottom: 9px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.aboutus-gearimg {
+  background: no-repeat;
+  background-image: url('../img/gear.svg');
+}
+
+.aboutus__item-title {
+  margin-bottom: 9px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.aboutus__item-descr {
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
