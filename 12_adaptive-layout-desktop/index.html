@@ -14,7 +14,7 @@
   <header class="header" id="header">
     <div class="container header__container flex">
       <a href="#" class="header__logo flex" aria-label="Главная страница">
-        <img src="./img/logo-evklid.svg" class="header__logo--img" alt="Логотип компании">
+        <img src="./img/logo-evklid.svg" class="header__logo-img" alt="Логотип компании">
       </a>
       <nav class="nav">
         <ul class="nav__list list-reset flex">
@@ -24,9 +24,7 @@
           <li class="nav__item"><a href="#request" class="nav__link">Оставить&nbsp;заявку</a></li>
         </ul>
       </nav>
-      <!-- убран лишний див и ссылка заменена на кнопку при клике появляется поле поиска и если оно есть то
-       это взаимодействие на странице  и это кнопка-->
-      <button href="#search" class="btn-reset">
+      <button href="#search" class="btn header__btn btn-reset">
         <svg id="search" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="7.56126" height="1.89031"
             transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6064 17.3762)" fill="black" />
@@ -49,15 +47,15 @@
             уделом
             проектантов
           </p>
-          <button class="hero__button btn-reset">Заказать расчёт</button>
+          <button class="btn hero__btn btn-reset">Заказать расчёт</button>
         </div>
       </div>
     </section>
-    <section class="aboutus aboutus__section--offset" id="abouts">
-      <div class="container">
 
-        <h2 class="aboutus__title">О нас</h2>
-        <p class="aboutus__descr">
+    <section class="aboutus" id="aboutus">
+      <div class="container">
+        <h2 class="aboutus__title title">О нас</h2>
+        <p class="aboutus__descr descr">
           Также как перспективное планирование создаёт необходимость включения в&nbsp;производственный план
           целого ряда
           внеочередных мероприятий с&nbsp;учётом комплекса экспериментов, поражающих по&nbsp;своей
@@ -74,55 +72,47 @@
         </p>
 
         <div class="aboutus__list">
-
-          <div class="aboutus__list-content">
-            <div class="aboutus__item aboutus__item-big aboutus__item-big-content">
-
+          <div class="aboutus__item-big">
+            <div class="aboutus__item-big-content">
               <p class="aboutus__item-big-descr">
                 Принимая во&nbsp;внимание показатели успешности, перспективное планирование
                 способствует подготовке
                 и&nbsp;реализации новых принципов
               </p>
-
               <a href="Подробнее: подробнее" class="aboutus__item-link">Подробнее</a>
             </div>
           </div>
 
           <div class="aboutus__list-content">
-            <div class="aboutus__item aboutus-cubeimg">
+            <div class="aboutus__item aboutus__item-cube-img">
               <h3 class="aboutus__item-title">Консультация с&nbsp;широким активом</h3>
-              <p class="aboutus__item-descr">
+              <p class="descr">
                 А&nbsp;также свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash; безусловно открывает
                 новые
                 горизонты
                 для как самодостаточных, так и&nbsp;внешне зависимых концептуальных решений
               </p>
             </div>
-            <div class="aboutus__item aboutus-gearimg">
+            <div class="aboutus__item aboutus__item-gear-img">
               <h3 class="aboutus__item-title">
                 В&nbsp;своём стремлении повысить
               </h3>
-              <p class="aboutus__item-descr">
+              <p class="descr">
                 Качество жизни, они забывают, что сплочённость команды профессионалов представляет
                 собой интересный
                 эксперимент проверки прогресса профессионального сообщества
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-    <section class="stages title-stages" id="stages">
+
+    <section class="stages" id="stages">
       <div class="container">
-        <!-- убрали лишний див -->
-        <h2 class="stages__title section-title">Этапы</h2>
-        <div class="stages__list flex">
-          <!-- у этого элемента псевдоэлемент с картинкой должен появится -->
-          <!-- по бэм не используем флекс т к это блок а блок не может быть вложен сам в себя
-           так получается что флекс у родителя потом внутри нужен флекс пишем его в классе
-           -->
-          <div class="stages__list-content stages__list--content--left flex">
+        <h2 class="stages__title title">Этапы</h2>
+        <div class="stages__list">
+          <div class="stages__list-content stages__list-content-left">
             <h3 class="stages__list-title">Проводим консультацию</h3>
             <p class="stages__list-descr">Влечёт за&nbsp;собой процесс внедрения и&nbsp;модернизации
               приоритизации
@@ -143,37 +133,35 @@
               разумеется,
               призваны к&nbsp;ответу.
             </p>
-            <div class="stages__list--buttons flex">
-              <!-- тут ссылки на страницу договора а не кнопки -->
-              <a class="stages__btn--detail btn-reset">Подробнее</a>
-              <a class="stages__btn btn-reset">Договор</a>
+            <div class="stages__list-buttons">
+              <a class="stages__btn-detail btn-reset">Подробнее</a>
+              <a class="stages__btn-contract btn-reset">Договор</a>
             </div>
           </div>
         </div>
-
       </div>
 
     </section>
-    <section class="questions title-questions" id="questions">
+    <section class="questions" id="questions">
       <div class="container">
-        <h2 class="section-title questions__title">Вопросы</h2>
-        <ul class="questions__list flex">
-          <li class="questions__item flex">
-            <h3 class="questions__item--title">Из&nbsp;чего формируется конечная стоимость проекта?</h3>
+        <h2 class="questions__title">Вопросы</h2>
+        <ul class="questions__list">
+          <li class="questions__item">
+            <h3 class="questions__item-title">Из&nbsp;чего формируется конечная стоимость проекта?</h3>
             <p class="questions__descr">
               Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны
               к&nbsp;ответу.
             </p>
           </li>
-          <li class="questions__item flex">
-            <h3 class="questions__item--title">У&nbsp;меня есть свой проект. Можно&nbsp;ли его реализовать?</h3>
+          <li class="questions__item">
+            <h3 class="questions__item-title">У&nbsp;меня есть свой проект. Можно&nbsp;ли его реализовать?</h3>
             <p class="questions__descr">
               А&nbsp;ещё некоторые особенности внутренней политики, которые представляют собой яркий пример
               континентального типа.
             </p>
           </li>
-          <li class="questions__item flex">
-            <h3 class="questions__item--title">Я&nbsp;выбираю между разными компаниями. Почему&nbsp;вы?</h3>
+          <li class="questions__item">
+            <h3 class="questions__item-title">Я&nbsp;выбираю между разными компаниями. Почему&nbsp;вы?</h3>
             <p class="questions__descr">
               Явные признаки победы институционализации набирают популярность среди определённых слоёв населения.
             </p>
@@ -185,14 +173,12 @@
   </main>
   <footer class="footer">
     <div class="container">
-      <div class="footer__container flex">
-        <div class="footer__left flex">
+      <div class="footer__container">
+        <div class="footer__left">
           <a href="#" class="footer__logo">
-            <!-- заменена картинка с пнг на свг -->
             <img src="./img/logo-footer.svg" class="footer__logo-img" alt="Логотип">
           </a>
-          <!-- навигация только в хедере а не в футере-быть не должно -->
-          <ul class="footer__nav-list  footer__nav nav flex">
+          <ul class="footer__list">
             <li class="footer__item"><a href="#join-us" class="footer__link">О&nbsp;нас</a></li>
             <li class="footer__item"><a href="#" class="footer__link">Проекты</a></li>
             <li class="footer__item"><a href="#" class="footer__link">Отзывы</a></li>
@@ -203,10 +189,10 @@
             <li class="footer__item"><a href="#" class="footer__link">Конфиденциальность</a></li>
             <li class="footer__item"><a href="#" class="footer__link">Партнёрское соглашение</a></li>
           </ul>
-          <ul class="social flex">
-            <li class="social__item">
-              <a href="#" class="social__link" aria-label="Ссылка на одноклассники">
-                <svg class="social__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
+          <ul class="footer__social-network">
+            <li class="footer__item">
+              <a href="#" class="footer__link" aria-label="Ссылка на одноклассники">
+                <svg class="footer__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M25.7054 19.9812C25.7054 22.4546 27.7105 24.4598 30.1838 24.4598C32.6572 24.4598 34.6623 22.4546 34.6623 19.9812C34.6623 17.5079 32.6572 15.5028 30.1838 15.5028C27.7105 15.5028 25.7054 17.5079 25.7054 19.9812Z" />
@@ -215,9 +201,9 @@
                 </svg>
               </a>
             </li>
-            <li class="social__item">
-              <a href="#" class="social__link" aria-label="Ссылка на ВК">
-                <svg class="social__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
+            <li class="footer__item">
+              <a href="#" class="footer__link" aria-label="Ссылка на ВК">
+                <svg class="footer__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M30 0C13.432 0 0 13.4314 0 30C0 46.5686 13.432 60 30 60C46.568 60 60 46.5686 60 30C60 13.4314 46.568 0 30 0ZM45.2176 33.2446C46.6159 34.6103 48.0951 35.8957 49.3504 37.4026C49.9065 38.0692 50.4307 38.7585 50.8297 39.5337C51.3993 40.6392 50.8849 41.8515 49.8954 41.9171L43.7494 41.9159C42.162 42.0473 40.8988 41.4071 39.8339 40.3218C38.9837 39.457 38.195 38.5332 37.3762 37.6389C37.0416 37.2718 36.6893 36.9262 36.2695 36.6543C35.4316 36.1093 34.7036 36.2762 34.2236 37.1515C33.7344 38.0421 33.6227 39.0292 33.5761 40.0205C33.5092 41.4697 33.0721 41.8484 31.618 41.9165C28.5109 42.062 25.5628 41.5906 22.8227 40.0241C20.4055 38.6425 18.5346 36.6924 16.9043 34.4845C13.7297 30.1805 11.2984 25.4566 9.11386 20.597C8.6222 19.5026 8.98189 18.917 10.1893 18.8943C12.1952 18.8557 14.2011 18.8606 16.2071 18.8925C17.0234 18.9054 17.5636 19.3725 17.8772 20.1428C18.9612 22.8098 20.2901 25.3473 21.9554 27.7007C22.3992 28.3274 22.8522 28.9522 23.4973 29.3948C24.2093 29.8834 24.7519 29.7219 25.0877 28.9271C25.3025 28.4219 25.3952 27.8817 25.4418 27.3404C25.6014 25.486 25.6205 23.6323 25.3442 21.7854C25.1724 20.6296 24.5224 19.8832 23.3702 19.6647C22.7834 19.5536 22.8694 19.3363 23.1548 19.0011C23.6501 18.4217 24.1142 18.0632 25.0416 18.0632L31.9857 18.062C33.0801 18.2768 33.3256 18.7679 33.4742 19.8703L33.4803 27.5871C33.4674 28.0137 33.6945 29.2782 34.4606 29.5574C35.0744 29.76 35.4795 29.2677 35.8465 28.8792C37.5118 27.112 38.6983 25.0263 39.7608 22.8675C40.2298 21.9155 40.6343 20.9303 41.0271 19.9433C41.3193 19.2135 41.7735 18.8544 42.5972 18.8667L49.2841 18.8747C49.4811 18.8747 49.6812 18.8765 49.8764 18.9103C51.0034 19.103 51.3121 19.5879 50.9635 20.6873C50.4147 22.4145 49.3485 23.8533 48.3063 25.2958C47.1892 26.8401 45.9977 28.3304 44.8917 29.8815C43.8752 31.2994 43.9556 32.0133 45.2176 33.2446Z" />
@@ -226,25 +212,25 @@
             </li>
           </ul>
         </div>
-        <div class="footer__center flex" id="request">
-          <h2 class="request__title">Оставить заявку</h2>
-          <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form flex">
+        <div class="footer__center" id="request">
+          <h2 class="footer__title">Оставить заявку</h2>
+          <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form">
             <input class="form__input" name="name" type="text" placeholder="Фамилия, имя и отчество*" required
               aria-label="Поле ввода">
             <input class="form__input" name="email" type="email" placeholder="Email*" required aria-label="Поле ввода">
-            <textarea class="form__input form__textarea--mail" name="message" placeholder="Сообщение"
+            <textarea class="form__input form__textarea-mail" name="message" placeholder="Сообщение"
               aria-label="Поле ввода"></textarea>
-            <div class="form__wrapper flex">
+            <div class="form__wrapper">
               <button class="form__btn btn-reset">Отправить данные</button>
               <label class="form__checkbox">
-                <input class="form__checkbox--input" type="checkbox" required>
-                <span class="form__checkbox--text">Согласен на&nbsp;обработку данных</span>
+                <input class="form__checkbox-input" type="checkbox" required>
+                <span class="form__checkbox-text">Согласен на&nbsp;обработку данных</span>
               </label>
             </div>
           </form>
         </div>
         <div class="footer__right flex">
-          <p class="footer__right--descr">
+          <p class="footer__right-descr">
             Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством
             простого
             факта:
