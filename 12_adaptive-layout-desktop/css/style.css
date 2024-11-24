@@ -158,6 +158,12 @@ img {
   margin-right: auto;
 }
 
+.header__logo:focus {
+  outline-offset: 5px;
+  outline: var(--focus);
+}
+
+
 .header__logo-img {
   max-width: 100%;
   height: auto;
@@ -306,7 +312,6 @@ img {
 }
 
 .hero__btn:focus {
-  outline: none;
   background-color: var(--hover-color);
 }
 
@@ -405,7 +410,6 @@ img {
 }
 
 .aboutus__item-link:focus {
-  outline: none;
   background-color: var(--main-color);
 }
 
@@ -421,7 +425,7 @@ img {
 .aboutus__list-content {
   display: flex;
   flex-direction: column;
-  width: calc((100% -(var(--offsets)* var(--gap))) /(var(--offsets) + 1));
+  max-width: 870px;
   gap: 33px;
 }
 
@@ -554,7 +558,6 @@ img {
 }
 
 .stages__btn-detail:focus {
-  outline: none;
   background-color: var(--hover-color);
 }
 
@@ -581,7 +584,6 @@ img {
 }
 
 .stages__btn:focus {
-  outline: none;
   border: 1px solid var(--grey-color);
   color: var(--white-color);
   background-color: var(--grey-color);
@@ -601,7 +603,7 @@ img {
 /* questions */
 
 .questions {
-  padding-top: 50px;
+  padding-top: 51px;
   padding-bottom: 100px;
 }
 
@@ -692,11 +694,13 @@ img {
 
 .footer__link {
   position: relative;
-  color: var(--font-grey);
   font-size: 18px;
   font-weight: 600;
   line-height: 32px;
+  line-height: 200%;
+  color: var(--font-grey);
   transition: color 0.3s ease-in-out;
+  outline: none;
 }
 
 .footer__link:focus {
@@ -710,12 +714,10 @@ img {
 
 .footer__link:active {
   color: var(--active-color);
-  outline: none;
 }
 
 .footer__link:active {
   color: var(--active-color);
-  outline: none;
 }
 
 .footer__social-network {
@@ -726,16 +728,12 @@ img {
   gap: 25px;
 }
 
-.footer__link:focus {
-  outline: none;
-}
-
 .footer__link svg {
   fill: var(--grey-color);
   transition: fill 0.3s ease-in-out;
 }
 
-.sfooter__link:focus svg {
+.footer__link:focus svg {
   outline-offset: 5px;
   outline: var(--focus);
   transition: fill 0.3s ease-in-out;
@@ -747,7 +745,6 @@ img {
 
 .footer__link:active svg {
   fill: var(--active-color);
-  outline: none;
 }
 
 .footer__center {
@@ -778,7 +775,7 @@ img {
 
 .form__input {
   min-height: 60px;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 25px;
   resize: none;
   border-radius: 16px;
@@ -795,7 +792,6 @@ img {
 
 .form__input:focus {
   background-color: var(--grey-color);
-  outline: none;
 }
 
 .form__input:hover {
@@ -804,13 +800,12 @@ img {
 
 .form__input:active {
   background-color: var(--grey-color);
-  outline: none;
 }
 
 .form__textarea-mail {
   min-height: 150px;
   margin-bottom: 9px;
-  padding-top: 16px;
+  padding-top: 22px;
   padding-left: 25px;
 }
 
@@ -834,7 +829,6 @@ img {
 }
 
 .form__btn:focus {
-  outline: none;
   background-color: var(--hover-color);
 }
 
