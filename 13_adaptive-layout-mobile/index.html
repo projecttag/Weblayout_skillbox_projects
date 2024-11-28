@@ -15,9 +15,13 @@
   <header class="header" id="header">
     <div class="container header__container flex">
       <a href="#" class="header__logo flex" aria-label="Главная страница">
-        <img src="./img/logo-evklid.svg" class="header__logo-img" alt="Логотип компании">
+        <picture>
+          <source media="(max-width: 992px)" srcset="./img/logo-768.svg">
+          <source media="(max-width: 1200px)" srcset="./img/logo-1024.svg">
+          <img src="./img/logo-evklid.svg" class="header__logo-img" alt="Логотип компании">
+        </picture>
       </a>
-      <nav class="nav">
+      <nav class="nav header__nav">
         <ul class="nav__list list-reset flex">
           <li class="nav__item"><a href="#join-us" class="nav__link">О&nbsp;нас</a></li>
           <li class="nav__item"><a href="#stages" class="nav__link">Этапы</a></li>
@@ -37,7 +41,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <!-- <main class="main">
     <section class="hero" id="hero">
       <div class="container hero__container">
         <div class="hero__content">
@@ -244,7 +248,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 </body>
 
 </html>
