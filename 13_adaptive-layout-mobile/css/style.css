@@ -65,7 +65,6 @@ img {
 }
 
 .page {
-  min-width: 1800px;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
 }
@@ -152,6 +151,9 @@ img {
 
 .header__container {
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* на случай переполнения флекс врап добавили */
 }
 
 .header__logo {
@@ -169,8 +171,12 @@ img {
   height: auto;
 }
 
-.nav__list {
+.header__nav {
   margin-right: 85px;
+}
+
+.nav__list {
+  /* margin-right: 85px; */
   column-gap: 84px;
   display: flex;
   align-items: center;

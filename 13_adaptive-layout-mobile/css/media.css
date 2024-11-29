@@ -1,14 +1,5 @@
 
 @media (max-width: 1440px) {
-
-  .page {
-    min-width: 1440px;
-  }
-
-  .container {
-    max-width: 1440px;
-  }
-
   .aboutus__list {
     display: block;
   }
@@ -44,22 +35,16 @@
 
 @media (max-width: 1200px) {
 
-  .page {
-    min-width: 1200px;
+  .header__logo {
+    margin-right: 0;
   }
 
-  .container {
-    max-width: 1200px;
-    padding: 0 50px;
+  .header__nav {
+    margin-right: 0;
   }
 
- .header__logo-img {
-    max-width: 56%;
-  }
-
-   .nav__list {
-    column-gap: 60px;
-    padding-right: 100px;
+  .nav__list {
+    gap: 60px;
   }
 
  .hero__content  {
@@ -133,29 +118,13 @@
 
 
 @media (max-width: 992px) {
-
-  .page {
-    min-width: 992px;
-  }
-
-  .container {
-    max-width: 992px;
-    padding: 0 50px;
-  }
-
-  /* header */
-
-  .header {
-    min-height: 69px;
-    border-radius: 0 0 24px 24px;
-  }
-
   .nav__list {
-    padding-right: 0;
+    gap: 40px;
   }
 
-  .header__container {
-    border-radius: 24px;
+  .nav__link {
+    font-size: 16px;
+    font-weight: 700;
   }
 
   /* hero */
@@ -284,85 +253,29 @@
   }
 }
 
-
-@media (max-width: 768px) {
-
-  .page {
-    min-width: 768px;
+/* Этот медиа запрос только для шапки */
+@media (max-width: 790px) {
+ .container {
+    padding: 0 15px;
   }
-
-  .container {
-    max-width: 768px;
-    padding: 0 50px;
+/* некоторые св-ва делаем раньше чтобы верстка не сломалась */
+  .nav-list {
+    gap: 24px;
   }
-
-  .header__logo-img {
-    max-width: 110px;
-  }
-
-  .nav__list {
-    column-gap: 40px;
-  }
-
-
-  .nav__link {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19.5px;
-  }
-
-  .nav__list {
-      margin-right: 43px;
-  }
-
-  .hero {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .aboutus__item {
-    padding: 35px 46px 35px 151px;
-  }
-
-  .aboutus__item-cube-img {
-    background-size: 114px;
-    background-position: 40px center;
-  }
-
-  .aboutus__item-gear-img {
-    background-size: 114px;
-    background-position: 40px center;
-  }
-
-  .aboutus__item-title {
-    margin-left: 16px;
-  }
-
-  .descr {
-    margin-left: 16px;
-  }
-
-  .questions {
-    padding-bottom: 80px;
-  }
-
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 590px) {
 
-  .page {
-    min-width: 576px;
+  .header {
+    padding-bottom: 40px;
   }
 
-  .container {
-    max-width: 576px;
-    padding: 0 50px;
-  }
-
-   .container {
-    padding: 0px 15px 0 15px;
-    /* max-width: 320px; */
+  .header__nav {
+    padding-top: 20px;
+    width: 100%;
+    order: 3;
+    overflow-x: scroll;
   }
 
   .section-title {
@@ -373,43 +286,12 @@
 
   /* header */
 
-  .header__container {
-    flex-wrap: wrap;
-    border-radius: 16px;
-    gap: 20px;
-  }
-
-  .header__logo {
-    margin: 0;
-    transform: unset;
-    order: 1;
-    padding-top: 13px;
-    width: 50%;
-  }
-
   .nav {
     margin-right: 0;
     padding-bottom: 10px;
     width: 105%;
     max-width: 399px;
     order: 3;
-  }
-
-  .nav__list {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 24px;
-  }
-
-  .header__search {
-    order: 2;
-  }
-
-  .nav__list {
-    display: flex;
-    flex-wrap: nowrap;
-    column-gap: 24px;
-    padding-bottom: 26px;
   }
 
   /* hero */
@@ -639,12 +521,9 @@
 
   @media (max-width: 370px) {
 
-  .page {
-    min-width: 370px;
-  }
 
   .container {
-    max-width: 370px;
+
     padding: 0 15px;
   }
 
@@ -658,12 +537,8 @@
 
 @media (max-width: 320px) {
 
-  .page {
-    min-width: 320px;
-  }
-
   .container {
-    max-width: 320px;
+
     padding: 0 15px;
   }
 
