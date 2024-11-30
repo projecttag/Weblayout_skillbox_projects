@@ -32,7 +32,7 @@
 
 }
 
-
+/* на 1200 делаем 1024 */
 @media (max-width: 1200px) {
 
   .header__logo {
@@ -47,24 +47,28 @@
     gap: 60px;
   }
 
- .hero__content  {
+  /* hero */
+
+  .hero__content {
     padding: 160px 77px;
-    min-height: 668px;
-    border-radius: 24px;
+    background-image: url('../img/hero-bg-1200.jpg');
   }
 
- .hero__title {
+  .hero__title {
     margin-bottom: 16px;
     font-size: 60px;
-    font-weight: 800;
-    line-height: 73px;
+    line-height: 73.14px;
   }
 
-   .hero__descr {
+  .hero__descr {
     margin-bottom: 60px;
     font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
+    line-height: 24.38px;
+  }
+
+  .hero__btn {
+    font-size: 24px;
+    line-height: 29.26px;
   }
 
   /* aboutUs */
@@ -128,21 +132,29 @@
   }
 
   /* hero */
-  .hero__content  {
-    min-height: 662px;
-    padding: 160px 40px 160px 40px;
+
+  .hero__content {
+    /* max-width: 90%; */
+    padding: 40px 40px;
+    background-image: url('../img/hero-bg-992.jpg');
   }
 
   .hero__title {
+    margin-bottom: 16px;
     font-size: 50px;
-    font-weight: 800;
-    line-height: 60px;
+    line-height: 60.95px;
   }
 
   .hero__descr {
+    /* max-width: 90%; */
+    margin-bottom: 60px;
     font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
+    line-height: 21.94px;
+  }
+
+  .hero__btn {
+    font-size: 23px;
+    line-height: 28.04px;
   }
 
   /* aboutUs */
@@ -255,11 +267,11 @@
 
 /* Этот медиа запрос только для шапки */
 @media (max-width: 790px) {
- .container {
+ .header__container {
     padding: 0 15px;
   }
 /* некоторые св-ва делаем раньше чтобы верстка не сломалась */
-  .nav-list {
+  .nav__list {
     gap: 24px;
   }
 }
@@ -286,50 +298,41 @@
 
   /* header */
 
-  .nav {
-    margin-right: 0;
-    padding-bottom: 10px;
-    width: 105%;
-    max-width: 399px;
-    order: 3;
-  }
-
   /* hero */
+
+  .container {
+    padding: 0 15px;
+  }
 
   .hero {
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
   }
 
   .hero__content {
-    padding: 60px 21px 0 22px;
     text-align: center;
+    padding: 60px 21px;
     border-radius: 16px;
-    min-height: 308px;
+    background-image: url('../img/hero-bg-590.jpg');
   }
 
   .hero__title {
+    margin-bottom: 16px;
     font-size: 20px;
-    font-weight: 800;
     line-height: 24.38px;
-    margin-bottom: 6px;
-
   }
 
   .hero__descr {
+    /* max-width: 90%; */
+    margin-bottom: 32px;
     font-size: 12px;
-    font-weight: 700;
     line-height: 14.63px;
-    margin-bottom: 34px;
   }
 
   .hero__btn {
-    align-self: center;
     padding: 13px 28px;
     border-radius: 8px;
-    font-size: 23px;
     font-size: 12px;
-    font-weight: 700;
     line-height: 14.63px;
   }
 
