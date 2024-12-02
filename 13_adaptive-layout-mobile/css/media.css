@@ -1,6 +1,6 @@
 
 @media (max-width: 1440px) {
-  .aboutus__list {
+  /* .aboutus__list {
     display: block;
   }
 
@@ -28,7 +28,7 @@
 
   .footer__left {
     margin-right: auto;
-  }
+  } */
 
 }
 
@@ -71,27 +71,34 @@
     line-height: 29.26px;
   }
 
-  /* aboutUs */
+  /* aboutus */
+
   .aboutus__descr {
-    margin-bottom: 55px;
+    margin-bottom: 60px;
   }
 
-   .aboutus__item {
-     padding-left: 317px;
+  .aboutus__list {
+    display: block;
+    gap: var(--gap);
   }
 
-  .aboutus__title {
-    margin: 0;
-    margin-bottom: 21px;
+  .aboutus__item-big {
+    margin-bottom: 32px;
+    max-width: 100%;
+    min-height: 640px;
+    background-image: url('../img/worker-1200.jpg');
   }
 
-  .stages__list-descr {
-    margin-bottom: 23px;
+  .aboutus__list-content {
+    min-width: 100%;
   }
 
-  .stages {
-    padding-top: 80px;
-    padding-bottom: 50px;
+  .aboutus__item-cube-img {
+    background-image: url('../img/cube-1200.svg');
+  }
+
+  .aboutus__item-gear-img {
+    background-image: url('../img/gear-1200.svg');
   }
 
   /* quotes */
@@ -120,7 +127,7 @@
 
 }
 
-
+/* 992 = 768 разрешение */
 @media (max-width: 992px) {
   .nav__list {
     gap: 40px;
@@ -158,7 +165,46 @@
   }
 
   /* aboutUs */
+
   .aboutus__descr {
+    margin-bottom: 60px;
+  }
+
+  .aboutus__list {
+    display: block;
+    gap: var(--gap);
+  }
+
+  .aboutus__item {
+    padding: 35px 46px 35px 170px
+  }
+
+  .aboutus__item-big {
+    margin-bottom: 32px;
+    max-width: 100%;
+    min-height: 640px;
+    background-image: url('../img/worker-992.jpg');
+  }
+  .aboutus__item-big-content {
+    padding: 34px 40px;
+  }
+
+  .aboutus__list-content {
+    min-width: 100%;
+  }
+
+  .aboutus__item-cube-img {
+    background-image: url('../img/cube-992.svg');
+    background-position: 40px;
+  }
+
+  .aboutus__item-gear-img {
+    background-image: url('../img/gear-992.svg');
+    background-position: 40px;
+  }
+
+
+  /* .aboutus__descr {
     margin-bottom: 50px;
   }
 
@@ -199,7 +245,7 @@
 
   .aboutus__item-gear-img {
     background-size: 10%;
-  }
+  } */
 
 /* .stages */
 
@@ -306,7 +352,7 @@
 
   .hero {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
   }
 
   .hero__content {
@@ -336,8 +382,81 @@
     line-height: 14.63px;
   }
 
-  /* aboutUs */
+  /* aboutus */
+
   .title {
+    font-size: 24px;
+    line-height: 29.26px;
+  }
+
+  .aboutus__descr {
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 14px;
+  }
+
+  .aboutus__picture-worker {
+    width: 100%;
+    height: auto; /* Картинка масштабируется пропорционально */
+    border-radius: 16px; /* Скругление углов для картинки */
+    display: block; /* Убираем лишние отступы */
+  }
+
+  .aboutus__item-big {
+    margin-bottom: 32px;
+    max-width: 100%;
+    min-height: 200px;
+    background-image: none;
+  }
+
+  .aboutus__item {
+    border: none;
+    padding: 83px 0px 0px 0px;
+    gap: 32px;
+  }
+
+  .aboutus__item-title {
+    margin-top: 12px;
+    margin-left: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+  }
+
+  .aboutus__item-big-content {
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .aboutus__item-big-descr {
+    color: black;
+    margin: 0;
+    max-width: 60%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 32px;
+    padding-bottom: 30px;
+  }
+
+  .aboutus__item-link {
+    display: inline;
+    padding: 12px 44px;
+    border-radius: 8px;
+  }
+
+  .aboutus__item-cube-img {
+    background-position: left top;
+    background-image: url('../img/cube-590.svg');
+  }
+
+  .aboutus__item-gear-img {
+    background-position: left top;
+    background-image: url('../img/gear-590.svg');
+  }
+
+  /* .title {
     font-weight: 400;
     font-size: 24px;
     color: var(--black-color);
@@ -356,7 +475,7 @@
 
   .aboutus__item-big {
     min-height: 340px;
-    /* border-radius: 24px; */
+
   }
 
   .aboutus__item {
@@ -376,7 +495,6 @@
 
   .aboutus__item-title {
     margin-top: 12px;
-    /* margin-bottom: 60px; */
     margin-left: 0;
     font-size: 18px;
     font-weight: 500;
@@ -402,7 +520,7 @@
 
   .stages__list::after {
     border-radius: 16px;
-  }
+  } */
 
   .questions {
     padding-bottom: 60px;
