@@ -1,4 +1,5 @@
 
+
 @media (max-width: 1440px) {
   /* .aboutus__list {
     display: block;
@@ -101,15 +102,62 @@
     background-image: url('../img/gear-1200.svg');
   }
 
+  /* stages */
+
+  .stages {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .stages__list-descr {
+    margin-bottom: 25px;
+  }
+
+  .stages__list::after {
+    background-image: url('../img/stages-1200.jpg');
+  }
+
+
   /* quotes */
 
   .questions__item {
-    padding: 35px 65px 35px 40px;
+    padding: 65px 60px;
+  }
+
+  .questions__list {
+    --offsets: 0;
   }
 
    /* footer */
 
-  .footer__center {
+
+  .footer__container {
+    gap: 0;
+  }
+
+   .footer__center {
+      order: 3;
+   }
+
+  .footer__right-descr {
+    position: absolute; /* Убираем элемент из потока */
+    width: 1px; /* Минимальная ширина */
+    height: 1px; /* Минимальная высота */
+    margin: -1px; /* Убираем из видимой области */
+    padding: 0; /* Убираем возможные отступы */
+    overflow: hidden; /* Скрываем содержимое, выходящее за границы */
+    clip: rect(0, 0, 0, 0); /* Обрезаем видимую область */
+    white-space: nowrap; /* Предотвращаем перенос текста */
+    border: 0; /* Убираем границы */
+    order: 2;
+  }
+
+  .form__btn {
+    padding: 19px 37px;
+  }
+
+
+  /* .footer__center {
     max-width: 541px;
   }
 
@@ -123,11 +171,14 @@
 
   .form__btn {
     padding: 19px 33px;
-  }
+  } */
 
 }
 
+
+
 /* 992 = 768 разрешение */
+
 @media (max-width: 992px) {
   .nav__list {
     gap: 40px;
@@ -203,6 +254,34 @@
     background-position: 40px;
   }
 
+  /* stages */
+
+  .stages {
+      padding-bottom: 80px;
+    }
+
+  .stages__list {
+    --offsets: 0;
+    gap: 38px;
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .stages__list::after {
+    width: 100%;
+    height: 284px;
+    border-radius: 24px;
+    background-image: url('../img/stages-992.jpg');
+  }
+
+  .stages__title {
+    margin-bottom: 32px;
+  }
+
+  .stages__list-title {
+    line-height: 32px;
+  }
+
 
   /* .aboutus__descr {
     margin-bottom: 50px;
@@ -247,47 +326,18 @@
     background-size: 10%;
   } */
 
-/* .stages */
-
-  .stages {
-      padding-bottom: 79px;
-    }
-
-  .stages__list {
-    --offsets: 0;
-  }
-
-  .stages__list{
-    flex-direction: column;
-    flex-direction: column-reverse;
-  }
-
-  .stages__list::after {
-    width: 100%;
-    height: 284px;
-    border-radius: 24px;
-    margin-bottom: 10px;
-  }
-
-  .stages__title {
-    margin-bottom: 29px;
-  }
-
   /* quotes */
 
-  .questions {
-    padding-top: 0;
-  }
-
   .questions__item {
-    padding: 35px 65px 35px 40px;
+    padding: 35px 40px;
   }
 
   .questions__list {
     --offsets: 0;
   }
 
-      /* footer */
+  /* footer */
+
   .footer__center {
     margin-bottom: 50px;
   }
@@ -384,11 +434,6 @@
 
   /* aboutus */
 
-  .title {
-    font-size: 24px;
-    line-height: 29.26px;
-  }
-
   .aboutus__descr {
     font-size: 14px;
     line-height: 28px;
@@ -403,20 +448,40 @@
   }
 
   .aboutus__item-big {
+    flex-direction: column; /* Элементы располагаются вертикально */
+    justify-content: space-between; /* Разделение пространства между элементами */
+    align-items: flex-start; /* Выравнивание элементов по левому краю */
     margin-bottom: 32px;
     max-width: 100%;
     min-height: 200px;
     background-image: none;
+    background-color: transparent;
+    position: relative;
+    background: none;
+    padding: 0;
+    min-height: 340px;
+  }
+
+  .aboutus__item-big::before {
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100%; /* Занимать всю ширину родителя */
+    height: 200px; /* Высота изображения */
+    background-image: url('../img/worker-590.jpg');
+    background-size: cover; /* Масштабирование изображения */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 16px;
   }
 
   .aboutus__item {
     border: none;
-    padding: 83px 0px 0px 0px;
+    padding: 55px 0px 0px 0px;
     gap: 32px;
   }
 
   .aboutus__item-title {
-    margin-top: 12px;
+    /* margin-top: 12px; */
     margin-left: 0;
     font-size: 18px;
     font-weight: 500;
@@ -424,26 +489,40 @@
   }
 
   .aboutus__item-big-content {
-    display: block;
+    /* display: block; */
     padding: 0;
     border-radius: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
+    align-items: flex-start;
+    flex-direction: column;
+    /* margin-bottom: 20px; */
+    flex-direction: column; /* Сохранить вертикальную структуру */
   }
 
   .aboutus__item-big-descr {
-    color: black;
-    margin: 0;
-    max-width: 60%;
+    padding: 208px 0 0 0;
+    color: #000000;
+    margin-bottom: 12px;
+    /* margin: 0; */
+    max-width: 100%;
     font-size: 16px;
     font-weight: 700;
     line-height: 32px;
-    padding-bottom: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    /* padding-bottom: 30px; */
   }
 
   .aboutus__item-link {
-    display: inline;
+    /* display: inline; */
+    align-self: flex-start; /* Зафиксировать кнопку слева */
     padding: 12px 44px;
     border-radius: 8px;
+    color: #FF9900;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.63px;
   }
 
   .aboutus__item-cube-img {
@@ -455,6 +534,70 @@
     background-position: left top;
     background-image: url('../img/gear-590.svg');
   }
+
+
+  /* stages */
+
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29.26px;
+  }
+
+  .aboutus__title {
+    margin-bottom: 20px;
+  }
+
+  .stages{
+    padding-top: 59px;
+    padding-bottom: 60px;
+  }
+
+  .stages__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 29.26px;
+  }
+
+  .stages__list-descr {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .stages__list {
+    gap: 16px;
+  }
+
+  .stages__list-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .stages__list::after {
+    height: 160px;
+    border-radius: 16px;
+    background-image: url('../img/stages-590.jpg');
+  }
+
+  .stages__list-buttons {
+    gap: 10px;
+  }
+
+  .stages__btn-detail {
+    padding: 12px 44px;
+    font-size: 12px;
+    line-height: 19.5px;
+    border-radius: 8px;
+  }
+
+  .stages__btn-contract {
+   padding: 12px 32px;
+    font-size: 12px;
+    line-height: 19.5px;
+    border-radius: 8px;
+  }
+
 
   /* .title {
     font-weight: 400;
@@ -522,8 +665,11 @@
     border-radius: 16px;
   } */
 
+  /* questions */
+
   .questions {
     padding-bottom: 60px;
+    padding-top: 0;
   }
 
   .questions__item {
@@ -533,7 +679,7 @@
 
   .questions__item-title {
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     font-size: 18px;
     font-weight: 500;
     line-height: 21.94px;
@@ -542,6 +688,11 @@
   .questions__title {
     font-size: 24px;
     font-weight: 400;
+  }
+
+  .questions__descr {
+    font-size: 14px;
+    line-height: 28px;
   }
 
   .questions__title {
@@ -575,7 +726,7 @@
     padding-bottom: 25px;
     /* max-width: 290px; */
     gap: 20px;
-    border-bottom: 3px solid #414141;
+    border-bottom: 1px solid #414141;
   }
 
   .form__input {
@@ -620,10 +771,10 @@
   }
 
   .footer__logo-img {
-    align-self: center;
-    max-width: 60%;
-    margin-left: 34%;
-    padding-top: 6%;
+    /* align-self: center; */
+    /* max-width: 60%;
+    margin-left: 34%; */
+    padding-top: 16px;
   }
 
   .social {
@@ -642,39 +793,12 @@
 
   @media (max-width: 370px) {
 
-
-  .container {
-
-    padding: 0 15px;
-  }
-
-  .aboutus__img {
-    position: relative;
-    top: 15px;
-    left: 0px;
-  }
-
-}
-
-@media (max-width: 320px) {
-
-  .container {
-
-    padding: 0 15px;
   }
 
 
-  .aboutus__img {
-    position: relative;
-    top: 25px;
-    left: 3px;
-    min-width: 21%;
-}
+  @media (max-width: 320px) {
 
-  .stages__list::after {
-    height: 160px;
-    border-radius: 16px;
+
   }
-}
 
 }
