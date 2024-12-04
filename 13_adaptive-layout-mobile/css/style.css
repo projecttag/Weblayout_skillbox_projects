@@ -331,6 +331,7 @@ img {
 
 /* about */
 
+
 .title {
   font-weight: 400;
   font-size: 48px;
@@ -380,6 +381,7 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
   background-position: center;
 }
+
 
 .aboutus__item-big-content {
   display: flex;
@@ -431,6 +433,7 @@ img {
   display: flex;
   flex-direction: column;
   max-width: 870px;
+  width: 100%;
   gap: 33px;
 }
 
@@ -671,7 +674,7 @@ img {
 .footer__left {
   display: flex;
   flex-direction: column;
-  min-width: 363px;
+  /* min-width: 363px; */
 }
 
 .footer__right {
