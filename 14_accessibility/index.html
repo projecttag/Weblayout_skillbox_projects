@@ -12,26 +12,24 @@
 </head>
 
 <body class="page">
-  <!-- ARIA! header -->
-  <header class="header" id="header" aria-label="Основной заголовок">
+  <header class="header" id="header">
     <div class="container header__container flex">
-      <a href="#" class="header__logo flex" aria-label="Главная страница">
+      <a href="#" class="header__logo flex">
         <picture>
           <source media="(max-width: 992px)" srcset="./img/logo-768.svg">
           <source media="(max-width: 1200px)" srcset="./img/logo-1024.svg">
           <img src="./img/logo-evklid.svg" class="header__logo-img" alt="Логотип компании">
         </picture>
       </a>
-      <!-- ARIA! nav,li,ul -->
-      <nav class="nav header__nav" aria-label="Основная навигация">
-        <ul class="nav__list list-reset flex" role="nav">
-          <li class="nav__item" role="nav item"><a href="#join-us" class="nav__link">О&nbsp;нас</a></li>
-          <li class="nav__item" role="nav item"><a href="#stages" class="nav__link">Этапы</a></li>
-          <li class="nav__item" role="nav item"><a href="#questions" class="nav__link">Вопросы</a></li>
-          <li class="nav__item" role="nav item"><a href="#request" class="nav__link">Оставить&nbsp;заявку</a></li>
+      <nav class="nav header__nav">
+        <ul class="nav__list list-reset flex">
+          <li class="nav__item"><a href="#join-us" class="nav__link">О&nbsp;нас</a></li>
+          <li class="nav__item"><a href="#stages" class="nav__link">Этапы</a></li>
+          <li class="nav__item"><a href="#questions" class="nav__link">Вопросы</a></li>
+          <li class="nav__item"><a href="#request" class="nav__link">Оставить&nbsp;заявку</a></li>
         </ul>
       </nav>
-      <!-- ARIA! btn -->
+      <!-- ARIA! btn + aria-label-->
       <button aria-label="Найти" href="#search" class="btn header__btn btn-reset header__search">
         <svg id="search" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="7.56126" height="1.89031"
@@ -43,10 +41,8 @@
       </button>
     </div>
   </header>
-
-  <!-- ARIA! main для улучшения семантики -->
-  <main class="main" role="main">
-    <section class="hero" id="hero" aria-labelledby="hero-title">
+  <main class="main">
+    <section class="hero" id="hero">
       <div class="container hero__container">
         <div class="hero__content">
           <h1 class="hero__title">Проектные решения любой сложности</h1>
@@ -56,14 +52,11 @@
             уделом
             проектантов
           </p>
-          <!-- ARIA! btn -->
-          <button aria-label="Заказать расчёт" class="btn hero__btn btn-reset">Заказать расчёт</button>
-
+          <button class="btn hero__btn btn-reset">Заказать расчёт</button>
         </div>
       </div>
     </section>
-    <!-- ARIA! section -->
-    <section class="aboutus" id="aboutus" aria-labelledby="aboutus__title">
+    <section class="aboutus" id="aboutus">
       <div class="container">
         <h2 class="aboutus__title title">О нас</h2>
         <p class="aboutus__descr descr">
@@ -89,7 +82,7 @@
                 способствует подготовке
                 и&nbsp;реализации новых принципов
               </p>
-              <a href="Подробнее: подробнее" class="aboutus__item-link">Подробнее</a>
+              <a href="#" class="aboutus__item-link">Подробнее</a>
             </div>
           </div>
           <div class="aboutus__list-content">
@@ -116,8 +109,7 @@
         </div>
       </div>
     </section>
-    <!-- ARIA! section -->
-    <section class="stages" id="stages" aria-labelledby="stages__title">
+    <section class="stages" id="stages">
       <div class="container">
         <h2 class="stages__title title">Этапы</h2>
         <div class="stages__list stage__img">
@@ -150,8 +142,7 @@
         </div>
       </div>
     </section>
-    <!-- ARIA! section -->
-    <section class="questions" id="questions" aria-labelledby="questions__title">
+    <section class="questions" id="questions">
       <div class="container">
         <h2 class="questions__title">Вопросы</h2>
         <ul class="questions__list">
@@ -186,20 +177,20 @@
           <a href="#" class="footer__logo">
             <img src="./img/logo-footer.svg" class="footer__logo-img" alt="Логотип">
           </a>
-          <!-- ARIA! ul,li -->
-          <ul class="footer__list" role="footer">
-            <li class="footer__item" role="footer item"><a href="#join-us" class="footer__link">О&nbsp;нас</a></li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link">Проекты</a></li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link">Отзывы</a></li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link" download="#">Договор оферты</a>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#join-us" class="footer__link">О&nbsp;нас</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Проекты</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Отзывы</a></li>
+            <li class="footer__item"><a href="#" class="footer__link" download="#">Договор оферты</a>
             </li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link" download="#">Договор
+            <li class="footer__item"><a href="#" class="footer__link" download="#">Договор
                 подряда</a></li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link">Конфиденциальность</a></li>
-            <li class="footer__item" role="footer item"><a href="#" class="footer__link">Партнёрское соглашение</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Конфиденциальность</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Партнёрское соглашение</a></li>
           </ul>
-          <ul class="footer__social-network" role="footer">
-            <li class="footer__item" role="footer item">
+          <ul class="footer__social-network">
+            <li class="footer__item">
+              <!-- Aria  a + -->
               <a href="#" class="footer__link" aria-label="Ссылка на одноклассники">
                 <svg class="footer__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -210,8 +201,8 @@
                 </svg>
               </a>
             </li>
-            <li class="footer__item" role="footer item">
-              <!-- Aria  a -->
+            <li class="footer__item">
+              <!-- Aria  a + -->
               <a href="#" class="footer__link" aria-label="Ссылка на ВК">
                 <svg class="footer__link-img" width="60" height="60" viewBox="0 0 60 60" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -223,22 +214,15 @@
           </ul>
         </div>
         <div class="footer__center" id="request">
-          <!--Заголовок является семантически верным эл-ом и Aria атрибут не нужен -->
           <h2 class="footer__title">Оставить заявку</h2>
           <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form">
-            <!-- Aria  input,textarea -->
-            <input class="form__input" name="name" type="text" placeholder="Фамилия, имя и отчество*" required
-              aria-label="Поле ввода" aria-describedby="name-description">
-            <input class="form__input" name="email" type="email" placeholder="Email*" required aria-label="Поле ввода">
-            <textarea class="form__input form__textarea-mail" name="message" placeholder="Сообщение"
-              aria-label="Поле ввода"></textarea>
+            <input class="form__input" name="name" type="text" placeholder="Фамилия, имя и отчество*" required>
+            <input class="form__input" name="email" type="email" placeholder="Email*" required>
+            <textarea class="form__input form__textarea-mail" name="message" placeholder="Сообщение"></textarea>
             <div class="form__wrapper">
-              <!-- ARIA btn -->
-              <button aria-label="Отправить данные" class="form__btn btn-reset">Отправить данные</button>
-              <!-- ARIA input -->
+              <button class="form__btn btn-reset">Отправить данные</button>
               <label class="form__checkbox">
-                <input class="form__checkbox-input" type="checkbox" required aria-labelledby="checkbox-label"
-                  aria-checked="true">
+                <input class="form__checkbox-input" type="checkbox" required>
                 <span class="form__checkbox-text" id="checkbox-label">Согласен на&nbsp;обработку
                   данных</span>
               </label>
