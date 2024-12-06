@@ -736,6 +736,15 @@ img {
   gap: 25px;
 }
 
+/* Особенности стилей SVG */
+/* У SVG-иконок могут быть установлены свойства line-height или baseline, которые создают визуальный отступ.
+Задан стиль ниже*/
+
+.footer__link svg {
+    vertical-align: middle;
+    /* display: block; */
+}
+
 .footer__link svg {
   fill: var(--grey-color);
   transition: fill 0.3s ease-in-out;
