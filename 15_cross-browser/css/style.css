@@ -700,7 +700,9 @@ img {
   margin-bottom: 89px;
 }
 
+/* display flex задан тут для кроссбраузерности */
 .footer__link {
+  display: flex;
   position: relative;
   font-size: 18px;
   font-weight: 600;
