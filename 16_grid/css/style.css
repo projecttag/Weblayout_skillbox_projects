@@ -61,7 +61,8 @@ img {
 }
 
 .list-reset {
-  /* margin: 0; */
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
   list-style: none;
 }
@@ -93,10 +94,11 @@ img {
 }
 
 .header-container {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 .header__logo {
@@ -111,16 +113,21 @@ img {
 
 .nav__list {
   display: flex;
-  column-gap: 56px;
-  align-items: center;
+  /* column-gap: 56px; */
+  /* align-items: center;
   justify-content: space-between;
-  border-radius: 15px;
+  border-radius: 15px; */
+}
+
+.nav__item {
+  padding: 0;
 }
 
 .nav__link {
   position: relative;
   font-size: 18px;
   color: var(--white-color);
+
 }
 
 /* hero */
@@ -128,22 +135,34 @@ img {
   background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
 }
 
+.hero__cont {
+  display: flex;
+  flex-direction: column; /* Размещаем элементы вертикально */
+  justify-content: center; /* Центрируем по вертикали */
+  /* align-items: center;  */
+  height: 100%; /* Высота контейнера */
+  /* text-align: center;  */
+  display: inline-flex;
+}
+
 .hero__section {
   /* padding-top: 130px;
   padding-bottom: 130px; */
   background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
   color: var(--white-color);
-  
+
 }
 
 .hero__background-image {
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center right;
   background-image: url('../img/geometric-1440.png');
+
 }
 
 .hero__cont {
-  padding: 130px 600px 130px 0;
+ padding-top: 130px;
+ padding-bottom: 130px;
   /* max-width: 459px; */
 }
 
@@ -153,6 +172,7 @@ img {
   font-size: 60px;
   font-weight: 700;
   line-height: 60px;
+  color: var(--white-color);
 }
 
 .hero__descr {
@@ -161,12 +181,14 @@ img {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+  color: var(--white-color);
 }
 
 /* Работаем с флексами а не с блоками - блоки это в прошлом
 класс флексы современные */
 .hero__btn {
-  display: inline-flex;
+  align-self: flex-start;
+  /* display: inline-flex; */
   padding: 24px 75.5px;
   background: var(--blue-color);
   border-radius: 20px;
@@ -201,7 +223,8 @@ img {
 .advantages__title {
   margin: 0;
   margin-bottom: 30px;
-  padding-right: 540px;
+  max-width: 380px;
+  /* padding-right: 540px; */
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
@@ -209,7 +232,8 @@ img {
 
 .advantages__descr-main {
   margin: 0;
-  padding: 0px 283px 0 0;
+  /* padding: 0px 283px 0 0; */
+  margin-bottom: 30px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -218,23 +242,56 @@ img {
 
 .advantages__descr {
   margin: 0;
+  min-height: 80px;
+  max-width: 300px;
+  padding-left: 110px;
+  /* padding: 16px 30px 0px 110px; */
   color: var(--grey-middle);
   font-size: 16px;
   font-weight: 700;
   line-height: 19.2px;
+}
 
+
+.align {
+  align-items: center;
 }
 
 .advantages__card {
-  padding-right: 30px;
+  /* padding-right: 30px; */
   align-items: center;
   display: flex;
   gap: 30px;
 }
 
+.advantages__card--image-eay {
+  background-image: url('../img/advantages-card1.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.advantages__card--image-finger {
+background-image: url('../img/advantages-card2.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.advantages__card--image-megaphone {
+  background-image: url('../img/adventages-card-3.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
 /* .advantages__card:not(:last-child) {
   margin-bottom: 30px;
 } */
+
+.hero__image {
+  display: flex; /* Включаем Flexbox */
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
+  text-align: center; /* Дополнительно, если текст или другие элементы есть */
+}
 
 
 /* teachers */
@@ -288,6 +345,10 @@ img {
 
 /* Courses */
 
+.courses {
+  padding: 0;
+}
+
 .courses__title {
   margin: 0;
   margin-bottom: 30px;
@@ -322,7 +383,7 @@ img {
 .course__descr {
   margin-bottom: auto;
   margin: 0;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -341,6 +402,7 @@ img {
   line-height: 18.75px;
   color: var(--white-color);
   text-align: center;
+  margin-top: auto;
 }
 
 /* .courses__list {
@@ -364,19 +426,33 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-height: 300px;
   height: 100%;
   padding: 31px 30px;
 }
 
 
 /* Footer */
+
+.footer__contact {
+  display: flex;
+  justify-content: space-between; /* Размещает элементы на краях */
+  align-items: center; /* Выравнивает элементы по вертикали */
+}
+
+.footer__contact-link {
+  margin: 0 auto;
+}
+
 .footer__contact-list {
+  padding: 20px 0; /* Отступ сверху и снизу */
   margin: 0;
   margin-bottom: 3px;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 28px 0;
+  min-height: 80px;
+  /* gap: 30px;
+  padding: 28px 0; */
   background-color: var(--secondary-color);
 }
 
@@ -386,6 +462,7 @@ img {
 }
 
 .footer__copywrite {
+  justify-content: space-between;
   margin: 0;
   text-align: center;
   font-size: 0.8125rem;
@@ -395,4 +472,5 @@ img {
 .reg {
   color: var(--blue-color);
   vertical-align: middle;
+   /*vertical-align: super; /* Размещаем ® как верхний индекс */
 }

@@ -1,0 +1,55 @@
+
+
+@media (max-width: 992px) {
+.hero__title {
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.advantages__descr {
+  max-width: 200px;
+  padding: 95px 0px 0px 0px;
+
+}
+
+.advantages__card--image-eay {
+ background-position: left top;
+}
+
+.advantages__card--image-finger {
+  background-position: left top;
+}
+
+.advantages__card--image-megaphone {
+  background-position: left top;
+}
+
+.course__content {
+  min-height: 376px;
+
+}
+
+
+
+}
+
+
+@media (max-width: 576px) {
+
+.hero__cont {
+ padding-top: 77px;
+ padding-bottom: 77px;
+  /* max-width: 459px; */
+}
+
+.media-sm {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.course__content {
+  min-height: 473px;
+
+}
+
+}
