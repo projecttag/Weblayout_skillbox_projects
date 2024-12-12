@@ -14,32 +14,32 @@
 
 <body class="page">
   <header class="header" id="header">
-    <div class="container header-container">
+    <div class="container">
       <div class="row">
-        <div class="col-md-5 media-sm">
-          <a href="#" class="header__logo">
+        <div class="col-lg-2 col-md-3 col-sm-12 d-flex justify-content-md-start justify-content-center header__logo">
+          <a href="#" class="logo">
             <img src="./img/skillbox-logo-main.svg" alt="Логотип компании">
           </a>
         </div>
 
-        <nav class="nav header__nav">
-          <ul class="list-reset">
-            <div class="nav__list ">
-              <li class="nav__item col-lg-5 col-md-5">
-                <div><a href="#" class="nav__link">Главная</a></div>
+        <div class="col-lg-10 col-md-9 col-sm-12 d-flex justify-content-lg-end justify-content-center">
+          <nav class="nav header__nav">
+            <ul class="nav__list list-reset">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Главная</a>
               </li>
-              <li class="nav__item col-lg-5 col-md-5">
-                <div><a href="#" class="nav__link">О&nbsp;нас</a></div>
+              <li class="nav__item">
+                <a href="#" class="nav__link">О&nbsp;нас</a>
               </li>
-              <li class="nav__item col-lg-5 col-md-5">
-                <div><a href="#" class="nav__link">Преподаватели</a></div>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Преподаватели</a>
               </li>
-              <li class="nav__item col-lg-7 col-md-5">
-                <div><a href="#" class="nav__link">Курсы</a></div>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Курсы</a>
               </li>
-            </div>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
 
       </div>
     </div>
@@ -47,23 +47,22 @@
   <main class="main" id="main">
     <section class="hero" id="hero">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-lg-5 col-md-6 col-sm-8">
-            <div class="hero__cont">
+            <div class="">
               <h1 class="hero__title">Курсы 3D моделирования</h1>
               <p class="hero__descr">
                 Следует отметить, что существующая теория способствует повышению качества благоприятных
                 перспектив.
                 Не&nbsp;следует, однако, забывать.
               </p>
-              <a href="#" class="hero__btn btn-reset">Выбрать курс</a>
+              <a href="#" class="hero__btn btn-reset d-inline-flex">Выбрать курс</a>
             </div>
           </div>
           <div class="col-lg-7 col-md-6 hero__image">
             <picture>
-              <source media="(max-width: 767px)" srcset="./img/geometric-768.png">
-              <source media="(max-width: 991px)" srcset="./img/geometric-768.png">
-              <img src="./img/geometric-1440.png" class="" alt="" aria-hidden="true">
+              <source media="(max-width: 991px)" srcset="./img/geometric-991.png">
+              <img src="./img/geometric-1440.png" class="visually-hidden" alt="" aria-hidden="true">
             </picture>
           </div>
         </div>
