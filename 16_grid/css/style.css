@@ -74,96 +74,42 @@ img {
   cursor: pointer;
 }
 
-/* .container {
-  max-width: 1440px;
-  padding: 0 165px;
-  margin: 0 auto;
-} */
-
 .section {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
+
+
+
 /* header */
 
 .header {
   padding: 30px 0;
-  align-items: center;
   background-color: var(--blue-color);
-}
-
-.header-container {
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-}
-
-.header__logo {
-  margin-right: 30px;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .nav__list {
   display: flex;
-  /* column-gap: 56px; */
-  /* align-items: center;
-  justify-content: space-between;
-  border-radius: 15px; */
-}
-
-.nav__item {
-  padding: 0;
+  column-gap: 56px;
 }
 
 .nav__link {
-  position: relative;
   font-size: 18px;
   color: var(--white-color);
-
 }
+
 
 /* hero */
 .hero {
+  padding: 14px 0;
   background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
 }
 
-.hero__cont {
-  display: flex;
-  flex-direction: column; /* Размещаем элементы вертикально */
-  justify-content: center; /* Центрируем по вертикали */
-  /* align-items: center;  */
-  height: 100%; /* Высота контейнера */
-  /* text-align: center;  */
-  display: inline-flex;
-}
 
 .hero__section {
-  /* padding-top: 130px;
-  padding-bottom: 130px; */
   background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
   color: var(--white-color);
-
-}
-
-.hero__background-image {
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-image: url('../img/geometric-1440.png');
-
-}
-
-.hero__cont {
- padding-top: 130px;
- padding-bottom: 130px;
-  /* max-width: 459px; */
 }
 
 .hero__title {
@@ -187,15 +133,13 @@ img {
 /* Работаем с флексами а не с блоками - блоки это в прошлом
 класс флексы современные */
 .hero__btn {
-  align-self: flex-start;
-  /* display: inline-flex; */
-  padding: 24px 75.5px;
+  padding: 24px 75px;
   background: var(--blue-color);
   border-radius: 20px;
   color:  var(--white-color);
   font-size: 18px;
   font-weight: 700;
-  line-height: 21.09px;
+  line-height: 21px;
 }
 
 /* advantages */
@@ -249,7 +193,7 @@ img {
   color: var(--grey-middle);
   font-size: 16px;
   font-weight: 700;
-  line-height: 19.2px;
+  line-height: 19px;
 }
 
 
@@ -399,7 +343,7 @@ background-image: url('../img/advantages-card2.svg');
   /* font-size: 1rem; */
   font-size: 16px;
   font-weight: 700;
-  line-height: 18.75px;
+  line-height: 18px;
   color: var(--white-color);
   text-align: center;
   margin-top: auto;
