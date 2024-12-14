@@ -16,6 +16,19 @@
 
 }
 
+.advantages__card--image-eay {
+ background-position: left top;
+}
+
+.advantages__card--image-finger {
+  background-position: left top;
+}
+
+.advantages__card--image-megaphone {
+  background-position: left top;
+}
+
+
 }
 
 @media (max-width: 767px) {
@@ -28,7 +41,7 @@
     overflow-x: scroll;
   }
 
-  .visually-hidden {
+.visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -53,6 +66,11 @@
 }
 
 @media (max-width: 320px) {
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .hero {
   padding-top: 50px;
@@ -80,8 +98,72 @@
   line-height: 18px;
 }
 
+.advantages {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
+.advantages__decor {
+  display: none;
+}
+
+.advantages__title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.advantages__descr {
+  max-width: 100%;
+  padding: 0;
+  padding-left: 100px;
+
+}
+
+.advantages__card {
+  margin-bottom: 30px; /* Отступ для всех элементов */
+}
+
+.list-reset li:last-child .advantages__card {
+  margin-bottom: 0; /* Убираем отступ у последнего элемента */
+}
+
+.teachers__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.teachers__title-main {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.courses {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.courses__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.course__descr {
+  padding-bottom: 88px;
+
+}
+
+
+}
 
 /*
 

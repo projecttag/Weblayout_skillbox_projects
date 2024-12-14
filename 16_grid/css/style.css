@@ -317,12 +317,18 @@ background-image: url('../img/advantages-card2.svg');
 
 
 .course__indents {
+  /* min-height: 100%; */
+  margin-bottom: 30px;
   background-color: var(--grey-pastel);
   border-radius: 20px;
    /* border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px; */
   /* padding-left: 0px; */
 }
+
+/* .courses .list-reset li:nth-last-child(-n+2) .course__indents {
+  margin-bottom: 0;
+} */
 
 .course__descr {
   margin-bottom: auto;
@@ -358,14 +364,14 @@ background-image: url('../img/advantages-card2.svg');
 } */
 
 .course__img {
-  /* width: 100%; */
+  width: 100%;
   min-height: 180px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
 .course__content {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
