@@ -101,6 +101,7 @@ img {
 
 
 /* hero */
+
 .hero {
   padding: 14px 0;
   background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
@@ -143,9 +144,9 @@ img {
 }
 
 /* advantages */
+
 .advantages__top-cont {
   align-items: center;
-  /* align-items: flex-start; */
   margin-bottom: 22px;
 }
 
@@ -168,7 +169,6 @@ img {
   margin: 0;
   margin-bottom: 30px;
   max-width: 380px;
-  /* padding-right: 540px; */
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
@@ -176,7 +176,6 @@ img {
 
 .advantages__descr-main {
   margin: 0;
-  /* padding: 0px 283px 0 0; */
   margin-bottom: 30px;
   font-size: 16px;
   font-weight: 400;
@@ -189,7 +188,6 @@ img {
   min-height: 80px;
   max-width: 300px;
   padding-left: 110px;
-  /* padding: 16px 30px 0px 110px; */
   color: var(--grey-middle);
   font-size: 16px;
   font-weight: 700;
@@ -202,7 +200,6 @@ img {
 }
 
 .advantages__card {
-  /* padding-right: 30px; */
   align-items: center;
   display: flex;
   gap: 30px;
@@ -226,10 +223,6 @@ background-image: url('../img/advantages-card2.svg');
   background-position: left;
 }
 
-/* .advantages__card:not(:last-child) {
-  margin-bottom: 30px;
-} */
-
 .hero__image {
   display: flex; /* Включаем Flexbox */
   align-items: center; /* Вертикальное выравнивание */
@@ -240,11 +233,11 @@ background-image: url('../img/advantages-card2.svg');
 
 /* teachers */
 
-.teachers__section {
+.teachers {
   background-color: var(--grey-dark);
 }
 
-.teachers__title-main {
+.teachers__caption{
   margin: 0;
   margin-bottom: 30px;
   font-size: 40px;
@@ -254,9 +247,9 @@ background-image: url('../img/advantages-card2.svg');
   font-family: Roboto;
 }
 
-/* .teachers__list {
-  margin-bottom: -26px;
-} */
+.teachers__offset {
+  margin-bottom: 30px;
+}
 
 .teachers__card {
   color: var(--white-color);
@@ -279,21 +272,23 @@ background-image: url('../img/advantages-card2.svg');
   color: var(--grey-light);
 }
 
+
+
 .teachers__img {
   width: 100%;
-  min-height: 180px;
-  margin-bottom: 30px;
+  max-height: 180px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  object-fit: cover;
 }
 
 /* Courses */
-
-.courses {
-  padding: 0;
+.course {
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 
-.courses__title {
+.course__title {
   margin: 0;
   margin-bottom: 30px;
   font-size: 40px;
@@ -309,31 +304,14 @@ background-image: url('../img/advantages-card2.svg');
   line-height: 27px;
 }
 
-/* .course__img {
-  margin-bottom: 30px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-} */
-
-
 .course__indents {
-  /* min-height: 100%; */
-  margin-bottom: 30px;
   background-color: var(--grey-pastel);
   border-radius: 20px;
-   /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
-  /* padding-left: 0px; */
 }
-
-/* .courses .list-reset li:nth-last-child(-n+2) .course__indents {
-  margin-bottom: 0;
-} */
 
 .course__descr {
   margin-bottom: auto;
   margin: 0;
-  /* margin-bottom: 32px; */
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -343,10 +321,8 @@ background-image: url('../img/advantages-card2.svg');
 .course__button {
   display: inline-flex;
   padding: 20px 56px;
-  /* margin-bottom: 30px; */
   background-color: var(--blue-color);
   border-radius: 20px;
-  /* font-size: 1rem; */
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
@@ -355,32 +331,23 @@ background-image: url('../img/advantages-card2.svg');
   margin-top: auto;
 }
 
-/* .courses__list {
-  margin-bottom: -30px;
-} */
-
-/* .courses__card {
-  margin-bottom: 30px;
-} */
-
 .course__img {
   width: 100%;
-  min-height: 180px;
+  max-height: 180px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  object-fit: cover;
 }
 
 .course__content {
-  /* margin-bottom: 30px; */
-  flex-grow: 1;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: 300px;
   height: 100%;
-  padding: 31px 30px;
+  padding: 30px 30px;
 }
-
 
 /* Footer */
 
@@ -401,8 +368,6 @@ background-image: url('../img/advantages-card2.svg');
   display: flex;
   justify-content: center;
   min-height: 80px;
-  /* gap: 30px;
-  padding: 28px 0; */
   background-color: var(--secondary-color);
 }
 

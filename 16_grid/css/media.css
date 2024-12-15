@@ -28,6 +28,12 @@
   background-position: left top;
 }
 
+.course__content {
+    /* margin-bottom: 30px; */
+    min-height: 376px;
+
+    padding: 31px 30px;
+}
 
 }
 
@@ -54,6 +60,12 @@
   clip-path: inset(100%);
 }
 
+.course__content {
+        /* margin-bottom: 30px; */
+        min-height: 473px;
+        padding: 31px 30px;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -65,7 +77,7 @@
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 574px) {
 
 .section {
   padding-top: 50px;
@@ -146,12 +158,12 @@
   padding-right: 15px;
 }
 
-.courses {
+.course {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.courses__title {
+.course__title {
   font-size: 20px;
   font-weight: 700;
   line-height: 20px;
